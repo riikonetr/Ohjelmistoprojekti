@@ -284,6 +284,30 @@ form textarea {
 	float: left;
 }
 
+#stories .card {
+	background-color: inherit;
+}
+
+.controlsBlock {
+   	position: relative;
+   	bottom: 0;
+   	left: 0;
+   	top: 10px;
+   	display: block;
+   	width: 177px;
+   	margin: 0 auto;
+   	z-index: 1;
+   	height: 24px;
+   	text-align: center;
+}
+
+.controls {
+   	position: relative;
+   	display: block;
+}
+
+
+
 #stories img {
 	height: 200px;
 	padding-right: 10px;
