@@ -1,11 +1,11 @@
 /*
 Theme Name:     VahizStore
-Theme URI:      https://woocommerce.com/products/boutique/
+Theme URI:      URI missing
 Description:    A Storefront child theme designed for VahizStore
 Author:         VahizTeam
 Author URI:     
 Template:       storefront
-Version:        1.0.0
+Version:        0.0.1
 License:        GNU General Public License v2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 Tags:           e-commerce
@@ -14,3 +14,33 @@ Text Domain:    vahizstore
 /* =VahizStore styles starts here
 -------------------------------------------------------------- */
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.site, .vahiz-header {
+    height: 100%;
+}
+
+.parallax {
+    /* Full height */
+    height: 100%; 
+    width: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    width: 30%;
+    position: relative;
+}

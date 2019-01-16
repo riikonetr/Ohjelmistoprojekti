@@ -18,3 +18,7 @@ $storefront_version	= $theme['Version'];
  * Load the individual classes required by this theme
  */
 require_once( 'inc/class-vahizstore.php' );
+
+require 'inc/vahizstore-functions.php';
+require 'inc/vahizstore-template-hooks.php';
+require 'inc/vahizstore-template-functions.php';
