@@ -414,8 +414,10 @@ section.main-content {
 }
 
 #bio {
-	background: url('../img/DSC_0507.jpg') 50% 100% repeat fixed;
-	background-size: 100% auto;
+	background: url('../img/DSC_0507.jpg');
+ 	background-attachment: fixed;
+ 	background-position: center;
+	background-size: cover;
 }
 
 #shop {
