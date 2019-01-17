@@ -9,7 +9,7 @@ Blue Gray:  #3e4249
 /* ==== GENERAL ==== */
 
 body {
-	margin-top: 50px;
+	margin-top: 0px;
 	font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
 	font-size: 16px;
 	background: url('../img/blackorchid.png') top left repeat;
@@ -242,21 +242,39 @@ form textarea {
 
 /* ==== landing ==== */
 
-#landing {
-	background: url('../img/GFkansi_ver3.jpg') 50% 0 repeat fixed;
-	background-size: 100% auto;
-	min-height: 500px;
-	position: relative;
-	display: table;
-	width: 100%;
-	padding: 0 0;
-	color: white;
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizelegibility;
+#navbar-wrapper {
+	background-color: #343a40;
 }
 
-#landing div {
-	min-height: 500px
+#logo-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 500px;
+	max-height: 500px;
+	-webkit-transform: translateZ(999px) scale(1);
+	transform: translateZ(999px) scale(1);
+	z-index: 1;
+}
+
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  	position: fixed;
+    width: 100%;
+}
+
+#landing {
+	background: url('../img/GF_promo_without_logo.jpg');
+ 	background-attachment: fixed;
+ 	background-position: center;
+	background-size: cover;
+	min-height: 500px;
+	max-height: 500px;
+	-webkit-transform: translateZ(-999px) scale(1.05);
+	transform: translateZ(-999px) scale(1.05);
+	z-index: 3;
+	overflow: hidden;
 }
 
 #price-timeline {
@@ -315,12 +333,13 @@ form textarea {
 }
 
 #band-members {
-
+	align: center;
+	text-align: center;
 }
 
 #band-members img {
-	height: 100%;
-	width: 100%;
+	height: 150%;
+	width: 150%;
 }
 
 #price-timeline .price.active {
@@ -421,9 +440,10 @@ section.main-content {
 }
 
 #shop {
-	background: url('../img/DSC_0495.jpg') 50% 100% repeat fixed;
-	background-size: 100% auto;
-	text-align: center;
+	background: url('../img/DSC_0495.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 }
 
 #featurette {
