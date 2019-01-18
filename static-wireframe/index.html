@@ -17,8 +17,7 @@
 		<!-- Google Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 
-
-    <title>Hello, world!</title>
+    <title>Hello, Gladenfold!</title>
   </head>
   <body>
 
@@ -27,45 +26,52 @@
 			<header class="site-header" role="banner">
 				<!-- NAVBAR
 				================================================== -->
-				<div class="navbar-wrapper">
-
-					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-						<div class="container">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-								<a class="navbar-brand" href="/"><img src="assets/img/logo.png" alt="Bootstrap to Wordpress"></a>
-							</div>
-							<div class="navbar-collapse collapse">
-								<ul class="nav navbar-nav navbar-right">
-									<li class="active"><a href="/">Home</a></li>
-									<li><a href="blog.html">Blog</a></li>
-									<li><a href="resources.html">Resources</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-				</div>
+        <div id="landing" class="parallax__group landingroup">
+          <div class="parallax__layer parallax__layer__base">
+          </div>
+          <div id="logo-wrapper" class="container parallax__layer parallax__layer--fore">
+            <div class="row justify-content-center">
+              <div class ="col">
+                <img src="assets/img/gladenfold_logo.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="navbar-wrapper" class="container-fluid">
+          <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark bg-dark" data-spy="affix">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#stories">Stories <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#bio">Bio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tour">Tour</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#shop">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#social">Social</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+      </div>
 			</header>
-
-
-		    <!-- LANDING
-		    ================================================== -->
-		    <section id="landing" data-type="background" data-speed="5">
-					<div>
-					</div>
-				</section>
 
 
 		    <!-- STORIES
 			================================================== -->
-			<section id="stories">
+      <a name="stories"></a>
+      <section id="stories">
 				<div class="container">
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
 		  			<div class="carousel-inner">
@@ -141,7 +147,8 @@
 
 			<!-- BIO
 			================================================== -->
-			<section id="bio">
+      <a name="bio"></a>
+      <section id="bio">
 				<div class="container">
 
 					<!-- Introduction / biography -->
@@ -154,9 +161,9 @@
 							</p>
 					</div><!-- row -->
 
-  					<div id="band-members" class="bandmembers row">
+  					<div id="band-members" class="bandmembers row justify-content-center no-gutters">
 						<!-- dude 1 -->
-						<div class="col-lg-2 col-md-4 col-sm-6">
+						<div class="col-lg col-md col-sm col">
               <figure>
               <img src="assets/img/brad.png">
 							<h3>Brad</h3>
@@ -164,7 +171,7 @@
 						</div><!-- end col -->
 
 						<!-- dude 2 -->
-						<div class="col-lg-2 col-md-4 col-sm-6">
+						<div class="col-lg col-md col-sm col">
               <figure>
               <img src="assets/img/brad.png">
 							<h3>Brad</h3>
@@ -172,7 +179,7 @@
 						</div><!-- end col -->
 
 						<!-- dude 3 -->
-						<div class="col-lg-2 col-md-4 col-sm-6">
+						<div class="col-lg col-md col-sm col">
               <figure>
               <img src="assets/img/brad.png">
 							<h3>Brad</h3>
@@ -180,7 +187,7 @@
 						</div><!-- end col -->
 
 						<!-- dude 4 -->
-						<div class="col-lg-2 col-md-4 col-sm-6">
+						<div class="col-lg col-md col-sm col">
               <figure>
               <img src="assets/img/brad.png">
 							<h3>Brad</h3>
@@ -188,19 +195,13 @@
 						</div><!-- end col -->
 
 						<!-- dude 5 -->
-						<div class="col-lg-2 col-md-4 col-sm-6">
+						<div class="col-lg col-md col-sm col">
               <figure>
               <img src="assets/img/brad.png">
 							<h3>Brad</h3>
               </figure>
 						</div><!-- end col -->
 
-						<!-- dude 6 -->
-						<div class="col-lg-2 col-md-4 col-sm-6">
-              <figure>
-              <img src="assets/img/brad.png">
-							<h3>Brad</h3>
-              </figure>
 						</div><!-- end col -->
 
 					</div><!-- band mebers -->
@@ -212,7 +213,8 @@
 
 			<!-- TOUR
 			================================================== -->
-			<section id="tour">
+      <a name="tour"></a>
+      <section id="tour">
 				<div class="container">
 					<div class="row">
 						<div class="col">
@@ -264,7 +266,8 @@
 
 			<!-- SHOP
 			================================================== -->
-			<section id="shop">
+      <a name="shop"></a>
+      <section id="shop">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-4">
@@ -293,7 +296,8 @@
 
 			<!-- social-media
 			================================================== -->
-			<section id="social-media" data-type="background" data-speed="4">
+      <a name="social"></a>
+      <section id="social-media" data-type="background" data-speed="4">
 				<div class="container">
 					<div class="row">
 						<h3>Latest buzz on social media:</h3>
@@ -308,27 +312,7 @@
 
 			<!-- FOOTER
 			================================================== -->
-			<footer>
-				<div class="container">
-					<div class="col-sm-3">
-						<p><a href="/"><img src="assets/img/logo.png" alt="Bootstrap to WordPress"></a></p>
-					</div><!-- end col -->
-					<div class="col-sm-6">
-						<nav>
-							<ul class="list-unstyled list-inline">
-								<li><a href="">Home</a></li>
-								<li><a href="">Blog</a></li>
-								<li><a href="">Resources</a></li>
-								<li><a href="">Contact</a></li>
-								<li class="signup-link"><a href="">Sign up now</a></li>
-							</ul>
-						</nav>
-					</div><!-- end col -->
-					<div class="col-sm-3">
-						<p class="pull-right">&copy; 2014 Brad Hussey</p>
-					</div><!-- end col -->
-				</div><!-- container -->
-			</footer>
+
 
 
 			<!-- MODAL
@@ -365,10 +349,11 @@
 					</div><!-- modal-content -->
 				</div><!-- modal-dialog -->
 			</div><!-- modal -->
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <script src="assets/js/affix.js"></script>
   </body>
 </html>
