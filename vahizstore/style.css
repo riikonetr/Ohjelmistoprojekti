@@ -14,19 +14,30 @@ Text Domain:    vahizstore
 /* =VahizStore styles starts here
 -------------------------------------------------------------- */
 
-html, body {
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-.site, .vahiz-header {
+.fullheight-page, .fullheight-header {
     height: 100%;
 }
 
+.navbar {
+   height: 10%; 
+}
+
 .parallax {
-    /* Full height */
-    height: 100%; 
+    /* Almost full height */
+    height: 90%; 
     width: 100%;
 
     /* Create the parallax scrolling effect */
