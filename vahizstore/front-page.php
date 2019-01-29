@@ -15,17 +15,25 @@ get_header("frontpage");
 
 ?>
 
-<div class="row">
-    <span>Social media</span>
-</div>
+<section id="social">
+  <div class="row">
+    <div class="col-sm-12">
+      <?php get_template_part('sections/social', 'section'); ?>
+    </div>
+  </div>
+</section>
 
 <div class="row">
     <span>Spotify</span>
 </div>
 
-<div class="row">
-    <span>Youtube</span>
-</div>
+<section id="youtube">
+  <div class="row">
+    <div class="col-sm-12">
+      <?php get_template_part('sections/youtube', 'section'); ?>
+    </div>
+  </div>
+</section>
 
 <div class="row">
     <span>Bio</span>
