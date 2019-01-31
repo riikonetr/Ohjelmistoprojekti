@@ -35,9 +35,13 @@ get_header("frontpage");
   </div>
 </section>
 
-<div class="row">
-    <span>Bio</span>
-</div>
+<section id="bio">
+  <div class="row">
+    <div class="col-sm-12">
+     <?php get_template_part('sections/biosection', 'section'); ?>
+    </div>
+  </div>
+</section>
 
 <div class="row">
     <span>Gigs from Facebook</span>
