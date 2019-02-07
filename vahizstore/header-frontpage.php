@@ -19,8 +19,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div id="page" class="fullheight-page">
-        <header class="fullheight-header" role="banner">
+    <div id="page">
+        <header role="banner" class="header-sticky">
 
             <div class="parallax" style="<?php vahizstore_header_img() ?>">
                 <div class="header-logo">
@@ -28,16 +28,21 @@
                 </div>
             </div>
 
-            <nav class="navbar sticky-top navbar-light bg-dark">
-                <?php
-                /**
-                 * Functions hooked into vahizstore_header action based on storefront hooks
-                 *
-                 * @hooked vahizstore_header_container                 - 0
-                 * @hooked vahizstore_primary_navigation_wrapper_close - 10
-                 */
-                do_action( 'vahizstore_header' );
-                ?>
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="#social">Feed</a>
+                        <a class="nav-item nav-link" href="#spotify">Music</a>
+                        <a class="nav-item nav-link" href="#youtube">Videos</a>
+                        <a class="nav-item nav-link" href="#bio">Bio</a>
+                        <a class="nav-item nav-link" href="#tour">Tour</a>
+                        <a class="nav-item nav-link" href="#shop">Shop</a>
+                        <a class="nav-item nav-link" href="#blog">Blog</a>
+                    </div>
+                </div>
             </nav>
 
         </header><!-- #masthead -->

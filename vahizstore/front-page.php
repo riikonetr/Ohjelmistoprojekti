@@ -18,19 +18,23 @@ get_header("frontpage");
 <section id="social">
   <div class="row">
     <div class="col-sm-12">
-      <?php get_template_part('sections/social', 'section'); ?>
+        <?php get_template_part('sections/social', 'section'); ?>
     </div>
   </div>
 </section>
 
-<div class="row">
-    <span>Spotify</span>
-</div>
+<section id="spotify">
+  <div class="row">
+        <div class="col-sm-12">
+            <span>Spotify</span>
+        </div>
+    </div>
+</section>
 
 <section id="youtube">
   <div class="row">
     <div class="col-sm-12">
-      <?php get_template_part('sections/youtube', 'section'); ?>
+        <?php get_template_part('sections/youtube', 'section'); ?>
     </div>
   </div>
 </section>
@@ -38,16 +42,20 @@ get_header("frontpage");
 <section id="bio">
   <div class="row">
     <div class="col-sm-12">
-     <?php get_template_part('sections/biosection', 'section'); ?>
+        <?php get_template_part('sections/biosection', 'section'); ?>
     </div>
   </div>
 </section>
 
-<div class="row">
-    <span>Gigs from Facebook</span>
-</div>
+<section id="tour">
+    <div class="row">
+        <div class="col-sm-12">
+            <span>Gigs from Facebook</span>
+        </div>
+    </div>
+</section>
 
-<section id="shopwindow">
+<section id="shop">
     <div class="row">
         <div class="col-sm-12">
             <?php get_template_part('sections/shopwindow', 'section'); ?>
@@ -55,8 +63,12 @@ get_header("frontpage");
     </div>
 </section>
 
-<div class="row">
-    <span>Articles</span>
-</div>
+<section id="blog">
+    <div class="row">
+        <div class="col-sm-12">
+            <span>Articles</span>
+        </div>
+    </div>
+</section>
 
 <?php get_footer("frontpage"); ?>
