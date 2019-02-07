@@ -22,6 +22,8 @@ require_once( 'inc/class-vahizstore.php' );
 require 'inc/vahizstore-functions.php';
 require 'inc/vahizstore-template-hooks.php';
 require 'inc/vahizstore-template-functions.php';
+require 'inc/woocommerce/vahizstore-woocommerce-template-hooks.php';
+require 'inc/woocommerce/vahizstore-woocommerce-template-functions.php';
 
 /**
 * Include bootsrap 
@@ -37,3 +39,12 @@ function bootsrap_enqueue_scripts() {
     wp_enqueue_script( 'bootstrapScript' );
 }
 add_action( 'wp_enqueue_scripts', 'bootsrap_enqueue_scripts');
+
+/**
+* Include awesome-fonts 
+ */
+function awesomefonts_enqueue_styles() {
+    wp_register_style( 'awesomeStyle', get_stylesheet_directory_uri() . '/assets/font-awesome/font-awesome.min.css' );
+    wp_enqueue_style( 'awesomeStyle' );
+}
+add_action( 'wp_enqueue_scripts', 'awesomefonts_enqueue_styles');

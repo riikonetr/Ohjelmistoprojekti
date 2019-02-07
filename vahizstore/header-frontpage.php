@@ -27,22 +27,38 @@
                     <?php site_header_logo() ?>
                 </div>
             </div>
-
-            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            
+            <nav class="navbar sticky-top  navbar-expand-sm navbar-dark bg-dark">
+                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar">
+                    <a class="navbar-toggler-icon"></a>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#social">Feed</a>
-                        <a class="nav-item nav-link" href="#spotify">Music</a>
-                        <a class="nav-item nav-link" href="#youtube">Videos</a>
-                        <a class="nav-item nav-link" href="#bio">Bio</a>
-                        <a class="nav-item nav-link" href="#tour">Tour</a>
-                        <a class="nav-item nav-link" href="#shop">Shop</a>
-                        <a class="nav-item nav-link" href="#blog">Blog</a>
-                    </div>
+                <?php do_action('vahizstore_header_cart'); ?>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="navbar-nav justify-content-center d-flex flex-fill">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#social">Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#spotify">Music</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#youtube">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#bio">Bio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tour">Tour</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#shop">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#blog">Blog</a>
+                        </li>
+                    </ul>
                 </div>
+                <div class="d-flex flex-fill"><!--spacer--> </div>
             </nav>
 
         </header><!-- #masthead -->
