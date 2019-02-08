@@ -16,57 +16,71 @@ get_header("frontpage");
 ?>
 
 <section id="social">
-  <div class="row">
-    <div class="col-sm-12">
-        <?php get_template_part('sections/social', 'section'); ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <?php get_template_part('sections/social', 'section'); ?>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
-<section id="spotify">
-  <div class="row">
-        <div class="col-sm-12">
-            <span>Spotify</span>
+<section id="spotify" class="parallax" style="<?php vahizstore_img_1() ?>">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Spotify</span>
+            </div>
         </div>
     </div>
 </section>
 
 <section id="youtube">
-  <div class="row">
-    <div class="col-sm-12">
-        <?php get_template_part('sections/youtube', 'section'); ?>
-    </div>
-  </div>
-</section>
-
-<section id="bio">
-  <div class="row">
-    <div class="col-sm-12">
-        <?php get_template_part('sections/biosection', 'section'); ?>
-    </div>
-  </div>
-</section>
-
-<section id="tour">
-    <div class="row">
-        <div class="col-sm-12">
-            <span>Gigs from Facebook</span>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <?php get_template_part('sections/youtube', 'section'); ?>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="shop">
-    <div class="row">
-        <div class="col-sm-12">
-            <?php get_template_part('sections/shopwindow', 'section'); ?>
+<section id="bio" class="parallax" style="<?php vahizstore_img_2() ?>">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <?php get_template_part('sections/biosection', 'section'); ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tour">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Gigs from Facebook</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="shop" class="parallax" style="<?php vahizstore_img_3() ?>">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <?php get_template_part('sections/shopwindow', 'section'); ?>
+            </div>
         </div>
     </div>
 </section>
 
 <section id="blog">
-    <div class="row">
-        <div class="col-sm-12">
-            <span>Articles</span>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Articles</span>
+            </div>
         </div>
     </div>
 </section>

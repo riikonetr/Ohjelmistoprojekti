@@ -18,12 +18,21 @@ body {
     scroll-behavior: smooth;
 }
 
+section {
+    padding: 60px;
+}
+
+.front-page {
+    background-color: black;
+    color: white;
+}
+
 .header-sticky {
     display:initial;
 }
 
 .parallax {
-    height: 800px; 
+    height: 100%; 
     width: 100%;
 
     /* Create the parallax scrolling effect */
@@ -31,6 +40,10 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+header .parallax {
+    height: 100vh;
 }
 
 .header-logo {

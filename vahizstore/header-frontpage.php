@@ -19,15 +19,14 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div id="page">
+    <div id="page" class="front-page">
         <header role="banner" class="header-sticky">
 
-            <div class="parallax" style="<?php vahizstore_header_img() ?>">
+            <div class="parallax" style="<?php vahizstore_landing_img() ?>">
                 <div class="header-logo">
                     <?php site_header_logo() ?>
                 </div>
             </div>
-            
             <nav class="navbar sticky-top  navbar-expand-sm navbar-dark bg-dark">
                 <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar">
                     <a class="navbar-toggler-icon"></a>
@@ -62,5 +61,3 @@
             </nav>
 
         </header><!-- #masthead -->
-
-        <div class="container">

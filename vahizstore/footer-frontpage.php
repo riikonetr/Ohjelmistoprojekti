@@ -8,9 +8,6 @@
  */
 
 ?>
-
-        </div><!-- .container -->
-        
         <footer role="contentinfo">
             <!-- TODO: Social media links and some style here -->
             <div>Footer text</div>
