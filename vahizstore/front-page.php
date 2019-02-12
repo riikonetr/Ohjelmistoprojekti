@@ -59,7 +59,7 @@ get_header("frontpage");
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <span>Gigs from Facebook</span>
+                <?php get_template_part('sections/tour_section', 'section'); ?>
             </div>
         </div>
     </div>
