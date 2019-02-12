@@ -34,7 +34,7 @@
 <div class="col-9">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-lkoh_test_tag
+
 <!-- PHP --->
 <?php
 
