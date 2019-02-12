@@ -29,7 +29,7 @@ get_header("frontpage");
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <span>Spotify</span>
+                <?php get_template_part('sections/spotify', 'section'); ?>
             </div>
         </div>
     </div>
@@ -76,13 +76,11 @@ get_header("frontpage");
 </section>
 
 <section id="blog">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <span>Articles</span>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+        <?php get_template_part('sections/blog', 'section'); ?>
     </div>
+  </div>
 </section>
 
 <?php get_footer("frontpage"); ?>
