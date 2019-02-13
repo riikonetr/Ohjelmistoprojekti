@@ -12,14 +12,14 @@
 
 
 
- 
+
 
 
 <?php
 
 
 
-$otsikko = "KEIKAT";
+$otsikko = "Gladenfold On The Road";
     $args = array(
         'post_type' => 'keikka',
 	'post_status'    => 'publish',
@@ -33,19 +33,19 @@ $otsikko = "KEIKAT";
                         array(
                           'key'     => 'date_',
 /*
-                          'value'   => strtotime( 'today' ), //tämä aiheutti sen, että keikoista tulostui vain 								     //enintään viisi päivää nykyhetkestä tulevaisuuteen 								     //sijoittuvat 
+                          'value'   => strtotime( 'today' ), //tämä aiheutti sen, että keikoista tulostui vain 								     //enintään viisi päivää nykyhetkestä tulevaisuuteen 								     //sijoittuvat
 */
                           'compare' => '<'
                         )
                       )
-  	
 
-     
+
+
     );
  ?>
 
 
-	
+
 <?php
     $loop = new WP_Query( $args );
 
@@ -55,7 +55,7 @@ my_title_place_holder('',$loop);
     if ( $loop->have_posts() ) {
         $counter = 0;
 
-        while ( $loop->have_posts() ) : $loop->the_post(); 
+        while ( $loop->have_posts() ) : $loop->the_post();
 ?>
 
 <?php
@@ -74,8 +74,9 @@ if ( $counter == 0 ) {
 <?php }?>
 
 <?php
-        // the_title();
- 
+          the_title();
+          echo "<br>";
+
           the_content();
 
 ?>
@@ -85,8 +86,8 @@ if ( $counter == 0 ) {
 
 
 
-<?php echo get_post_meta(get_the_ID(), 'paikkakunta', true).', '; 
-      echo get_post_meta(get_the_ID(), 'maa', true).', '; 
+<?php echo get_post_meta(get_the_ID(), 'paikkakunta', true).', ';
+      echo get_post_meta(get_the_ID(), 'maa', true).', ';
       echo get_post_meta(get_the_ID(), 'date_', true);
 
 ?>
@@ -103,18 +104,22 @@ echo get_post_meta(get_the_ID(), 'url', true);
 
 <p>
 </p>
-         
 
 
 
- 	
+
+
 
 <?php
 
-$counter = $counter+1; 
-           
+$counter = $counter+1;
+
      endwhile;
 
+    }
+
+    else {
+      echo "No shows yet :(";
     }
 
 wp_reset_query();
@@ -126,7 +131,3 @@ wp_reset_query();
 
 <p>
 </p>
-
-
-
-   

@@ -3,7 +3,7 @@ Theme Name:     VahizStore
 Theme URI:      URI missing
 Description:    A Storefront child theme designed for VahizStore
 Author:         VahizTeam
-Author URI:     
+Author URI:
 Template:       storefront
 Version:        0.0.1
 License:        GNU General Public License v2 or later
@@ -20,6 +20,7 @@ body {
 
 section {
     padding: 60px;
+    min-height: 700px;
 }
 
 .front-page {
@@ -32,7 +33,7 @@ section {
 }
 
 .parallax {
-    height: 100%; 
+    height: 100%;
     width: 100%;
 
     /* Create the parallax scrolling effect */

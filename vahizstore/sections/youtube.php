@@ -10,7 +10,7 @@
 
 <?php
     $args = array(
-        'category' => 'embedded-video',
+        'category_name' => 'embedded-video',
         'posts_per_page' => 12
     );
     $loop = new WP_Query( $args );
