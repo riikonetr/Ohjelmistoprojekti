@@ -25,11 +25,10 @@ section {
     min-height: 700px;
     padding-top: 60px;
     padding-bottom: 60px;
-    background: url('assets/img/blackorchid.png') top left repeat;
 }
 
 .front-page {
-    background-color: black;
+    background-color: #0b040f;
     color: white;
 }
 
@@ -52,12 +51,13 @@ header .parallax {
     height: 100vh;
 }
 
+header img {
+    display:initial;
+}
+
 .header-logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
     top: 50%;
-    width: 30%;
     position: relative;
 }
 
@@ -66,101 +66,29 @@ header .parallax {
     margin-left: 1rem;
 }
 
-/*SPOTIFY*/
-
-.embed-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    height: auto;
-}
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-}
-
-/* Footer */
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-section {
-    padding: 60px 0;
-}
-
 section .section-title {
     text-align: center;
     color: #007b5e;
     margin-bottom: 50px;
     text-transform: uppercase;
 }
-footer {
-    background: #343a40 !important;
-    padding: 5px 0;
 
+.footer-social-links {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    background: #343a40;
 }
-footer h5{
-  padding-left: 10px;
-    border-left: 3px solid #eeeeee;
-    padding-bottom: 6px;
-    margin-bottom: 20px;
-    color:#ffffff;
-}
+
 footer a {
-    color: #ffffff;
-    text-decoration: none !important;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
-}
-footer ul.social li{
-  padding: 3px 0;
-}
-footer ul.social li a i {
-    margin-right: 5px;
-  font-size:25px;
-  -webkit-transition: .5s all ease;
-  -moz-transition: .5s all ease;
-  transition: .5s all ease;
-}
-footer ul.social li:hover a i {
-  font-size:30px;
-  margin-top:-10px;
-}
-footer ul.social li a,
-footer ul.quick-links li a{
-  color:#ffffff;
-}
-footer ul.social li a:hover{
-  color:#eeeeee;
-}
-footer ul.quick-links li{
-  padding: 3px 0;
-  -webkit-transition: .5s all ease;
-  -moz-transition: .5s all ease;
-  transition: .5s all ease;
-}
-footer ul.quick-links li:hover{
-  padding: 3px 0;
-  margin-left:5px;
-  font-weight:700;
-}
-footer ul.quick-links li a i{
-  margin-right: 5px;
-}
-footer ul.quick-links li:hover a i {
-    font-weight: 700;
+    color: white;
+    font-size:25px;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
 }
 
-@media (max-width:767px){
-  footer h5 {
-    padding-left: 0;
-    border-left: transparent;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
-}
+footer a:hover {
+    color: white;
+    font-size:30px;
+    margin-top:-10px;
 }
