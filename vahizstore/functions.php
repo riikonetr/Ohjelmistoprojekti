@@ -27,7 +27,7 @@ require 'inc/woocommerce/vahizstore-woocommerce-template-hooks.php';
 require 'inc/woocommerce/vahizstore-woocommerce-template-functions.php';
 
 /**
-* Include bootsrap 
+* Include bootsrap
  */
 function bootsrap_enqueue_styles() {
     wp_register_style( 'bootstrapStyle', get_stylesheet_directory_uri() . '/assets/bootsrap/bootstrap.min.css' );
@@ -42,7 +42,7 @@ function bootsrap_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'bootsrap_enqueue_scripts');
 
 /**
-* Include awesome-fonts 
+* Include awesome-fonts
  */
 function awesomefonts_enqueue_styles() {
     wp_register_style( 'awesomeStyle', get_stylesheet_directory_uri() . '/assets/font-awesome/font-awesome.min.css' );
@@ -52,6 +52,42 @@ add_action( 'wp_enqueue_scripts', 'awesomefonts_enqueue_styles');
 
 add_action('init', 'keikka_register');
 
+/**
+* Customize new product editor
+* TODO: Move to separate php file?
+*/
+
+
+function remove_product_editor() {
+  remove_post_type_support( 'product', 'editor' );
+}
+add_action( 'init', 'remove_product_editor' );
+
+
+/**
+* Customize new keikka editor
+* TODO: Move to separate php file?
+*/
+function remove_keikka_editor() {
+  remove_post_type_support( 'keikka', 'editor' );
+}
+add_action( 'init', 'remove_keikka_editor' );
+
+/**
+* Customize product view
+* TODO: Move to separate php file?
+*/
+function remove_storefront_sidebar() {
+	if ( is_woocommerce() ) {
+		remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
+	}
+}
+add_action( 'get_header', 'remove_storefront_sidebar' );
+
+/**
+* Keikka custom post type
+* TODO: Move to separate php file?
+ */
 function keikka_register() {
 
 	$labels = array(
@@ -80,18 +116,18 @@ function keikka_register() {
 		'hierarchical' => false,
 		'menu_position' => null,
 		'supports' => array('title','editor','thumbnail')
-	  ); 
+	  );
 
 	register_post_type( 'keikka' , $args );
         flush_rewrite_rules();
 }
 //Ao. kutsu on alustava -ajatuksena oli asettaa keikka-postaustyyppi Events-tyypin alle
-register_taxonomy("Events", array("keikka"), array("hierarchical" => true,  "rewrite" => true));  											
+register_taxonomy("Events", array("keikka"), array("hierarchical" => true,  "rewrite" => true));
 
 add_action("admin_init", "admin_init");
 
 function admin_init(){
- 
+
   add_meta_box("paikkakunta_meta", "Paikkakunta", "paikkakunta_meta", "keikka", "normal", "low");
   add_meta_box("maa_meta", "Maa", "maa_meta", "keikka", "normal", "low");
   add_meta_box("date__meta", "Aika", "date_", "keikka", "normal", "low");
@@ -113,11 +149,11 @@ function paikkakunta_meta() {
   global $post;
   $custom = get_post_custom($post->ID);
   $paikkakunta = $custom["paikkakunta"][0];
-  
+
   ?>
  <label>Paikkakunta:</label>
 <input name="paikkakunta" value="<?php echo $paikkakunta; ?>" />
-  
+
   <?php
 }
 
@@ -125,11 +161,11 @@ function maa_meta() {
   global $post;
   $custom = get_post_custom($post->ID);
   $maa = $custom["maa"][0];
-  
+
   ?>
  <label>Maa:</label>
  <input name="maa" value="<?php echo $maa; ?>" />
-  
+
   <?php
 }
 
@@ -137,11 +173,11 @@ function url_meta() {
   global $post;
   $custom = get_post_custom($post->ID);
   $url = $custom["url"][0];
-  
+
   ?>
  <label>URL:</label>
  <input name="url" value="<?php echo $url; ?>" />
-  
+
   <?php
 }
 
@@ -153,17 +189,17 @@ add_action('save_post', 'save_details');
 function save_details(){
   global $post;
 
-  
-  update_post_meta($post->ID, "paikkakunta", $_POST["paikkakunta"]); 
+
+  update_post_meta($post->ID, "paikkakunta", $_POST["paikkakunta"]);
   update_post_meta($post->ID, "maa", $_POST["maa"]);
   update_post_meta($post->ID, "date_", $_POST["date_"]);
   update_post_meta($post->ID, "url", $_POST["url"]);
-  
+
 }
 
 
 add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
- 
+
 function add_my_post_types_to_query( $query ) {
     if ( is_home() && $query->is_main_query() )
         $query->set( 'post_type', array( 'post', 'keikka' ) );
@@ -181,7 +217,7 @@ function keikka_edit_columns($columns){
     "title" => "Otsikko",
     "paikkakunta" => "Paikkakunta",
     "maa" => "Maa",
-   
+
     "date_" => "Keikan päivämäärä",
     "url" => "URL",
   );
@@ -193,8 +229,8 @@ function keikka_custom_columns($column){
 
   switch ($column) {
 
-    
-    
+
+
     case "paikkakunta":
        $custom = get_post_custom();
       echo $custom["paikkakunta"][0];
@@ -216,7 +252,7 @@ function keikka_custom_columns($column){
   }
 }
 
-add_filter('enter_title_here', 'my_title_place_holder' , 20 , 2 ); 
+add_filter('enter_title_here', 'my_title_place_holder' , 20 , 2 );
     function my_title_place_holder($title , $post){	//asettaa otsikko-osion placeholderin
 
         if( $post->post_type == 'keikka' ){
@@ -240,7 +276,4 @@ echo $output;
 
 /*
 'supports' => array('title', 'editor', 'thumbnail');  // tämä oli osa ohjetta, mutta aiheutti koko sivun add_theme_support('post-thumbnails');  		      //toimimattomuuden
-*/	     
-
-
-
+*/
