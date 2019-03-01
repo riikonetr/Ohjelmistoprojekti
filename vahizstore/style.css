@@ -3,7 +3,7 @@ Theme Name:     VahizStore
 Theme URI:      URI missing
 Description:    A Storefront child theme designed for VahizStore
 Author:         VahizTeam
-Author URI:     
+Author URI:
 Template:       storefront
 Version:        0.0.1
 License:        GNU General Public License v2 or later
@@ -14,30 +14,30 @@ Text Domain:    vahizstore
 /* =VahizStore styles starts here
 -------------------------------------------------------------- */
 
-html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-}
-
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    scroll-behavior: smooth;
+    margin-top: 0px;
+    font-size: 16px;
+    font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
 }
 
-.fullheight-page, .fullheight-header {
-    height: 100%;
+section {
+    min-height: 700px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
-.navbar {
-   height: 10%; 
+.front-page {
+    background-color: #0b040f;
+    color: white;
+}
+
+.header-sticky {
+    display:initial;
 }
 
 .parallax {
-    /* Almost full height */
-    height: 90%; 
+    height: 100%;
     width: 100%;
 
     /* Create the parallax scrolling effect */
@@ -47,11 +47,90 @@ body {
     background-size: cover;
 }
 
+header .parallax {
+    height: 100vh;
+}
+
+header img {
+    display:initial;
+}
+
 .header-logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
     top: 50%;
-    width: 30%;
     position: relative;
+}
+
+.header-basket {
+    line-height: 1.6;
+    margin-left: 1rem;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.footer-social-links {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    background: #343a40;
+}
+
+footer a {
+    color: white;
+    font-size:25px;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+}
+
+footer a:hover {
+    color: white;
+    font-size:30px;
+    margin-top:-10px;
+}
+
+/* Kauppa */
+
+.product-template-default
+{
+  background-color: #0b040f;
+  color: white;
+}
+
+.post-type-archive-product
+{
+ background-color: #0b040f;
+ color: white;
+}
+
+.page-template-default
+{
+ background-color: #0b040f;
+ color: white;
+}
+
+body.woocommerce #primary {
+	float: none;
+	width: 100%;
+}
+
+.shop_table {
+  color: black;
+}
+
+
+/* Billing information layout fix */
+
+.woocommerce-billing-fields .form-row,
+.woocommerce-shipping-fields .form-row,
+.woocommerce-additional-fields .form-row {
+	display: block;
+}
+
+#customer_details .col-1, .col-2 {
+  max-width: 100%;
 }

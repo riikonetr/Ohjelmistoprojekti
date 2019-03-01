@@ -26,7 +26,7 @@
             <div class="col-md-4 col-sm-12">
                 <a class="d-block mb-4" href="<?php echo get_the_permalink() ?>">
                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );?>
-                    <img class="img-fluid img-thumbnail" src="<?php  echo $image[0]; ?>">
+                    <img class="img-thumbnail" src="<?php  echo $image[0]; ?>">
                 </a>
             </div>
 <?php
