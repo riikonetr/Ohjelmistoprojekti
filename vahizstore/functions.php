@@ -18,7 +18,7 @@
    * Load the individual classes required by this theme
    */
   require_once( 'inc/class-vahizstore.php' );
-  require_once( 'inc/class-vahizstore-customizer.php' );
+  require_once( 'inc/customizer/class-vahizstore-customizer.php' );
 
   require 'inc/vahizstore-functions.php';
   require 'inc/vahizstore-template-hooks.php';
@@ -211,6 +211,9 @@
   function save_details(){
     global $post;
 
+    if( !is_object($post) ) {
+        return;
+    }
 
     update_post_meta($post->ID, "paikkakunta", $_POST["paikkakunta"]);
     update_post_meta($post->ID, "maa", $_POST["maa"]);
