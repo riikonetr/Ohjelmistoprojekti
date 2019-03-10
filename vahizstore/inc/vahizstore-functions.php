@@ -68,20 +68,6 @@ function href($url) {
 }
 
 /**
- * Create mailto.
- *
- * @since  1.0.0
- */
-function mailto($email) {
-    $href = '';
-    if ( $email ) {
-        $href = 'href=mailto:' . sanitize_email( $email ) . $email;
-    }
-
-    return esc_attr( $href );
-}
-
-/**
  * Get the landing image.
  *
  * @uses  style($is_image)
@@ -138,7 +124,7 @@ function spotify_url() {
 }
 
 /**
- * Get spotify url.
+ * Get sanitized contact email.
  *
  * @since  1.0.0
  */
