@@ -24,7 +24,7 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 		public function __construct() {
                     add_action( 'customize_register', array( $this, 'customize_register' ) );
 		}
-                
+
                 /**
 		 * Add frontpage logo and image settings.
                  * __(String, String) translator
@@ -35,52 +35,52 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 		public function customize_register( $wp_customize ) {
                     define( 'CUSTOMIZER_REPEATER_VERSION', '1.1.0' );
                     require_once( 'customizer-repeater-control.php' );
-                    
+
                     $wp_customize->add_panel( 'frontpage_panel', array(
                         'title' => __( 'Frontpage settings', 'vahizstore' ),
                         'priority' => 160,
                     ) );
-                    
+
                     // Images section
                     $wp_customize->add_section('image_section', array(
                         'title'    => __('Background images', 'vahizstore'),
                         'panel' => 'frontpage_panel',
                     ));
-                    
+
                     $wp_customize->add_setting('landing_image');
                     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'landing_image', array(
                         'label'    => __('Landing image', 'vahizstore'),
                         'section'  => 'image_section',
                         'settings' => 'landing_image',
                     )));
-                    
+
                     $wp_customize->add_setting('background_image_1');
                     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'background_image_1', array(
                         'label'    => __('Background image 1', 'vahizstore'),
                         'section'  => 'image_section',
                         'settings' => 'background_image_1',
                     )));
-                    
+
                     $wp_customize->add_setting('background_image_2');
                     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'background_image_2', array(
                         'label'    => __('Background image 2', 'vahizstore'),
                         'section'  => 'image_section',
                         'settings' => 'background_image_2',
                     )));
-                    
+
                     $wp_customize->add_setting('background_image_3');
                     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'background_image_3', array(
                         'label'    => __('Background image 3', 'vahizstore'),
                         'section'  => 'image_section',
                         'settings' => 'background_image_3',
                     )));
-                    
+
                     // Social section
                     $wp_customize->add_section('curator_section', array(
                         'title'    => __('Curator', 'vahizstore'),
                         'panel' => 'frontpage_panel',
                     ));
-                    
+
                     $wp_customize->add_setting('curator_id');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'curator_id', array(
                         'label'    => __('Curator id', 'vahizstore'),
@@ -88,13 +88,13 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'settings' => 'curator_id',
                         'type' => 'text',
                     )));
-                    
+
                     // Spotify section
                     $wp_customize->add_section('spotify_section', array(
                         'title'    => __('Spotify link', 'vahizstore'),
                         'panel' => 'frontpage_panel',
                     ));
-                    
+
                     $wp_customize->add_setting('spotify_link');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'spotify_link', array(
                         'label'    => __('Spotify link', 'vahizstore'),
@@ -102,13 +102,13 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'settings' => 'spotify_link',
                         'type' => 'url',
                     )));
-                    
+
                     // Youtube section
                     $wp_customize->add_section('youtube_section', array(
                         'title'    => __('Youtube videos', 'vahizstore'),
                         'panel' => 'frontpage_panel',
                     ));
-                    
+
                     $wp_customize->add_setting('youtube_videos');
                     $wp_customize->add_control( new Customizer_Repeater($wp_customize, 'youtube_videos', array(
                         'label'   => esc_html__('Links','vahizshop'),
@@ -116,13 +116,13 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'section' => 'youtube_section',
                         'customizer_repeater_link_control' => true,
                     )));
-                    
+
                     // Footer section
                     $wp_customize->add_section('footer_section', array(
                         'title'    => __('Footer links', 'vahizstore'),
                         'panel' => 'frontpage_panel',
                     ));
-                    
+
                     $wp_customize->add_setting('social_links');
                     $wp_customize->add_control( new Customizer_Repeater($wp_customize, 'social_links', array(
                         'label'   => esc_html__('Links with icons','vahizshop'),
@@ -131,9 +131,23 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'customizer_repeater_icon_control' => true,
                         'customizer_repeater_link_control' => true,
                     )));
-                          
+
+										// Contact details
+										$wp_customize->add_section('contact_section', array(
+												'title'    => __('Contact details', 'vahizstore'),
+												'panel' => 'frontpage_panel',
+										));
+
+										$wp_customize->add_setting('contact_email');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_email', array(
+												'label'    => __('Contact email', 'vahizstore'),
+												'section'  => 'footer_section',
+												'settings' => 'contact_email',
+												'type' => 'email',
+										)));
+
                 }
-                
+
                 /**
                 * Sanitization function.
                 *

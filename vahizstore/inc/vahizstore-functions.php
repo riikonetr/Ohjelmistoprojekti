@@ -47,7 +47,7 @@ function curator_feed($id) {
 function source($url) {
     $src = '';
     if ( $url ) {
-        $src = 'src=' . esc_url( $url ) . ')';
+        $src = 'src=' . esc_url( $url );
     }
 
     return esc_attr( $src );
@@ -62,6 +62,20 @@ function href($url) {
     $href = '';
     if ( $url ) {
         $href = 'href=' . esc_url( $url );
+    }
+
+    return esc_attr( $href );
+}
+
+/**
+ * Create mailto.
+ *
+ * @since  1.0.0
+ */
+function mailto($email) {
+    $href = '';
+    if ( $email ) {
+        $href = 'href=mailto:' . sanitize_email( $email ) . $email;
     }
 
     return esc_attr( $href );
@@ -120,7 +134,18 @@ function curator() {
  */
 function spotify_url() {
         $url = get_theme_mod( 'spotify_link' );
-        echo source($url);      
+        echo source($url);
+}
+
+/**
+ * Get spotify url.
+ *
+ * @since  1.0.0
+ */
+function contact_email() {
+        $email = sanitize_email(get_theme_mod('contact_email'));
+        echo '<i class="fas fa-envelope mr-3"></i>';
+        echo $email;
 }
 
 /**
@@ -133,9 +158,9 @@ function social_links() {
         /*This returns a json so we have to decode it*/
         $customizer_repeater_example_decoded = json_decode($footer_links);
         foreach($customizer_repeater_example_decoded as $repeater_item){
-            echo '<li class="nav-item">';
+            echo '<li class="list-inline-item">';
             echo '<a class="nav-link" href="' . $repeater_item->link . '">';
-            echo '<span class="fa fab ' . $repeater_item->icon_value . '"></span>';
+            echo '<span class="' . $repeater_item->icon_value . '"></span>';
             echo '</a>';
             echo '</li>';
         }

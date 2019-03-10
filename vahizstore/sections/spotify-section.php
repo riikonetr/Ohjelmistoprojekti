@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  * Embedded Spotify player
  *
  * @package vahizstore
