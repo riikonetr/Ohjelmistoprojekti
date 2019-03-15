@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  * Embedded Youtube videos
  *
  * @package vahizstore
@@ -8,6 +8,8 @@
 
 ?>
 
+
+<h3><center>Media</center></h3>
 
 <?php
     //TODO: Will be changed to media section
@@ -24,4 +26,3 @@
         echo '</div>';
     }
 ?>
-

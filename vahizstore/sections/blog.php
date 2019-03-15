@@ -7,6 +7,8 @@
  */
 ?>
 
+<h3><center>News</center></h3>
+
 <style>
 .carousel-item {
   color: white;

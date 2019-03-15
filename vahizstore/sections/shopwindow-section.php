@@ -1,5 +1,5 @@
 <?php
-/** 
+/**
  *
  * Contains peek to the shop
  *
@@ -7,6 +7,9 @@
  */
 
 ?>
+
+<h3><center>Shop</center></h3>
+
 
 <?php
     $args = array(

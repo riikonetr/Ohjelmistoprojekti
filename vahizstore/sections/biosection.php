@@ -8,6 +8,8 @@
 
 ?>
 
+<h3><center>Biography</center></h3>
+
 <?php
     $args = array(
         'post_type' => 'page',

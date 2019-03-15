@@ -8,6 +8,8 @@
 
   ?>
 
+  <h3><center>Tour</center></h3>
+
   <?php
 
 

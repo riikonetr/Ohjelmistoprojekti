@@ -28,7 +28,6 @@ section {
 }
 
 .front-page {
-    background-color: #0b040f;
     color: white;
 }
 
@@ -141,19 +140,16 @@ section .section-title {
 
 .product-template-default
 {
-  background-color: #0b040f;
   color: white;
 }
 
 .post-type-archive-product
 {
- background-color: #0b040f;
  color: white;
 }
 
 .page-template-default
 {
- background-color: #0b040f;
  color: white;
 }
 
@@ -164,6 +160,15 @@ body.woocommerce #primary {
 
 .shop_table {
   color: black;
+}
+
+.woocommerce-checkout-payment {
+  color: black;
+}
+
+/* Disable Storefront's default footer */
+#colophon {
+  visibility: hidden;
 }
 
 
