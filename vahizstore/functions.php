@@ -23,8 +23,6 @@
   require 'inc/vahizstore-functions.php';
   require 'inc/vahizstore-template-hooks.php';
   require 'inc/vahizstore-template-functions.php';
-  require 'inc/woocommerce/vahizstore-woocommerce-template-hooks.php';
-  require 'inc/woocommerce/vahizstore-woocommerce-template-functions.php';
 
   /**
   * Include bootsrap

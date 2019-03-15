@@ -5,52 +5,44 @@
  * @package vahizstore
  */
 
-if ( ! function_exists( 'vahizstore_header_container' ) ) {
+if ( ! function_exists( 'vahizstore_cart_link_fragment' ) ) {
 	/**
-	 * The header container
-	 */
-	function vahizstore_header_container() {
-		echo '<div class="col-full">';
-	}
-}
-
-// Hakee ensisijaisen valikon kentät. Toiminta selvitettävä ja css säädettävä.
-if ( ! function_exists( 'vahizstore_primary_navigation' ) ) {
-	/**
-	 * Display Primary Navigation
+	 * Cart Fragments
+	 * Ensure cart contents update on front page 
+         * when products are added to the cart via AJAX
 	 *
-	 * @since  1.0.0
-	 * @return void
+	 * @param  array $fragments Fragments to refresh via AJAX.
+	 * @return array            Fragments to refresh via AJAX
 	 */
-	function vahizstore_primary_navigation() {
-		?>
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
-		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?></span></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location'  => 'primary',
-					'container_class' => 'primary-navigation',
-				)
-			);
+	function vahizstore_cart_link_fragment( $fragments ) {
+		global $woocommerce;
 
-			wp_nav_menu(
-				array(
-					'theme_location'  => 'handheld',
-					'container_class' => 'handheld-navigation',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-		<?php
+		ob_start();
+		vahizstore_cart_link();
+		$fragments['a.frontpage-cart-contents'] = ob_get_clean();
+
+		return $fragments;
 	}
 }
 
-if ( ! function_exists( 'vahizstore_header_container_close' ) ) {
+if ( ! function_exists( 'vahizstore_cart_link' ) ) {
 	/**
-	 * The header container close
+	 * Cart Link
+	 * Displayed a link to the cart including the number of items present
+	 *
+	 * @return void
+	 * @since  1.0.0
 	 */
-	function vahizstore_header_container_close() {
-		echo '</div>';
+	function vahizstore_cart_link() {
+                if(WC()->cart->get_cart_contents_count() > 0) {
+                    ?>
+                        <div class="frontpage-cart">
+                            <a class="navbar-brand" title="<?php esc_attr_e( 'View your shopping cart', 'storefront' ); ?>" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
+                                <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) ); ?></span>
+                                <span class="fas fa-shopping-basket header-basket"></span>
+                            </a>
+                        </div>
+                    <?php
+                }
 	}
 }

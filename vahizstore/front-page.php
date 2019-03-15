@@ -15,6 +15,12 @@ get_header("frontpage");
 
 ?>
 
+<div class="sidebar">
+    <ul class="list-group">
+        <?php social_links_sidebar() ?>
+    </ul>
+</div>
+
 <section id="social">
     <div class="container">
         <div class="row">

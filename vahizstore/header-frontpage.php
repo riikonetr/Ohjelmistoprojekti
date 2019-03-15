@@ -14,9 +14,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
 
 
 <?php wp_head(); ?>
@@ -31,13 +28,13 @@
                     <?php site_header_logo() ?>
                 </div>
             </div>
-            <nav class="navbar sticky-top  navbar-expand-sm navbar-dark bg-dark">
-                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar">
+            <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
                     <a class="navbar-toggler-icon"></a>
                 </button>
                 <?php do_action('vahizstore_header_cart'); ?>
-                <div class="navbar-collapse collapse" id="navbar">
-                    <ul class="navbar-nav justify-content-center d-flex flex-fill">
+                <div class="navbar-collapse collapse justify-content-center" id="navbar">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="#social">Feed</a>
                         </li>
@@ -61,7 +58,6 @@
                         </li>
                     </ul>
                 </div>
-                <div class="d-flex flex-fill"><!--spacer--> </div>
             </nav>
 
         </header><!-- #masthead -->

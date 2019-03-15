@@ -48,7 +48,7 @@
 
             <!-- Social buttons -->
             <ul class="list-unstyled list-inline text-center">
-              <?php social_links(); ?>
+              <?php social_links_footer(); ?>
             </ul>
             <!-- Social buttons -->
 

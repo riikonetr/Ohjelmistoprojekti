@@ -118,8 +118,8 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                     )));
 
                     // Footer section
-                    $wp_customize->add_section('footer_section', array(
-                        'title'    => __('Footer links', 'vahizstore'),
+                    $wp_customize->add_section('social_section', array(
+                        'title'    => __('Social links', 'vahizstore'),
                         'panel' => 'frontpage_panel',
                     ));
 
@@ -127,24 +127,24 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                     $wp_customize->add_control( new Customizer_Repeater($wp_customize, 'social_links', array(
                         'label'   => esc_html__('Links with icons','vahizshop'),
                         'item_name' => 'Link',
-                        'section' => 'footer_section',
+                        'section' => 'social_section',
                         'customizer_repeater_icon_control' => true,
                         'customizer_repeater_link_control' => true,
                     )));
 
-										// Contact details
-										$wp_customize->add_section('contact_section', array(
-												'title'    => __('Contact details', 'vahizstore'),
-												'panel' => 'frontpage_panel',
-										));
+                    // Contact details
+                    $wp_customize->add_section('contact_section', array(
+                                    'title'    => __('Contact details', 'vahizstore'),
+                                    'panel' => 'frontpage_panel',
+                    ));
 
-										$wp_customize->add_setting('contact_email');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_email', array(
-												'label'    => __('Contact email', 'vahizstore'),
-												'section'  => 'footer_section',
-												'settings' => 'contact_email',
-												'type' => 'email',
-										)));
+                    $wp_customize->add_setting('contact_email');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_email', array(
+                                    'label'    => __('Contact email', 'vahizstore'),
+                                    'section'  => 'social_section',
+                                    'settings' => 'contact_email',
+                                    'type' => 'email',
+                    )));
 
                 }
 

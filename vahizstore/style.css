@@ -47,18 +47,48 @@ section {
     background-size: cover;
 }
 
+/* Position and z-index to hide sidebar */
 header .parallax {
-    height: 100vh;
-}
-
-header img {
-    display:initial;
+    height: 93vh;
+    position: relative;
+    z-index: 1;
 }
 
 .header-logo {
-    text-align: center;
-    top: 50%;
-    position: relative;
+    height: 100%;
+}
+
+.header-logo img {
+    display:initial;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+/* Little bit more style for navbar links */
+#navbar a {
+    font-family: Great vibes;
+    text-shadow: 0px 2px 5px rgb(160, 175, 255);
+    font-size: 2rem;
+    color: white;
+}
+
+#navbar a:hover {
+    text-shadow: 0px -2px 15px rgb(255, 255, 255);
+    color: rgb(160, 175, 255);
+}
+
+.frontpage-cart{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.frontpage-cart a:hover{
+    text-decoration: underline;
 }
 
 .header-basket {
@@ -73,13 +103,27 @@ section .section-title {
     text-transform: uppercase;
 }
 
+.sidebar {
+    height: 100vh;
+    width: 10%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .list-group-item {
+    background-color: transparent;
+}
+
 .footer-social-links {
     padding-top: 60px;
     padding-bottom: 20px;
     background: #343a40;
 }
 
-footer a {
+.sidebar a, footer a {
     color: white;
     font-size:25px;
     -webkit-transition: .5s all ease;
@@ -87,7 +131,7 @@ footer a {
     transition: .5s all ease;
 }
 
-footer a:hover {
+.sidebar a:hover, footer a:hover {
     color: white;
     font-size:30px;
     margin-top:-10px;
