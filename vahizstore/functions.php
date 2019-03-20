@@ -69,7 +69,7 @@
   function remove_keikka_editor() {
     remove_post_type_support( 'keikka', 'editor' );
   }
-  add_action( 'init', 'remove_keikka_editor' );
+  //add_action( 'init', 'remove_keikka_editor' );
 
   /**
   * Customize product view
@@ -122,103 +122,6 @@
   //Ao. kutsu on alustava -ajatuksena oli asettaa keikka-postaustyyppi Events-tyypin alle
   register_taxonomy("Events", array("keikka"), array("hierarchical" => true,  "rewrite" => true));
 
-  add_action("admin_init", "admin_init");
-
-  function admin_init(){
-
-    add_meta_box("paikkakunta_meta", "Paikkakunta", "paikkakunta_meta", "keikka", "normal", "low");
-    add_meta_box("maa_meta", "Maa", "maa_meta", "keikka", "normal", "low");
-    add_meta_box("date__meta", "Aika", "date_", "keikka", "normal", "low");
-    add_meta_box("url_meta", "URL", "url_meta", "keikka", "normal", "low");
-
-  }
-
-  function date_(){  //jokaiselle attribuutille on lisätty oma funktionsa
-    global $post;
-  $custom = get_post_custom($post->ID);
-    //$date_ = date('Y-m-d',strtotime($custom["date_"][0]));
-    $date_ =  $custom["date_"][0];
-  ?>
-
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-
-
-  <input id="date_" name="date_" type="text" value="<?php echo $date_; ?>">
-
-  <script type='text/javascript'>
-  $(function () {
-          $("#date_").datepicker({
-              dateFormat: "yy/mm/dd",
-              showOtherMonths: true,
-              selectOtherMonths: true,
-              autoclose: true,
-              changeMonth: true,
-              changeYear: true,
-              //gotoCurrent: true,
-          });
-  });
-  </script>
-
-    <?php
-  }
-
-  function paikkakunta_meta() {
-    global $post;
-    $custom = get_post_custom($post->ID);
-    $paikkakunta = $custom["paikkakunta"][0];
-
-    ?>
-   <label>Paikkakunta:</label>
-  <input name="paikkakunta" value="<?php echo $paikkakunta; ?>" />
-
-    <?php
-  }
-
-  function maa_meta() {
-    global $post;
-    $custom = get_post_custom($post->ID);
-    $maa = $custom["maa"][0];
-
-    ?>
-   <label>Maa:</label>
-   <input name="maa" value="<?php echo $maa; ?>" />
-
-    <?php
-  }
-
-  function url_meta() {
-    global $post;
-    $custom = get_post_custom($post->ID);
-    $url = $custom["url"][0];
-
-    ?>
-   <label>URL:</label>
-   <input name="url" value="<?php echo $url; ?>" />
-
-    <?php
-  }
-
-
-
-
-  add_action('save_post', 'save_details');
-
-  function save_details(){
-    global $post;
-
-    if( !is_object($post) ) {
-        return;
-    }
-
-    update_post_meta($post->ID, "paikkakunta", $_POST["paikkakunta"]);
-    update_post_meta($post->ID, "maa", $_POST["maa"]);
-    update_post_meta($post->ID, "date_", $_POST["date_"]);
-    update_post_meta($post->ID, "url", $_POST["url"]);
-
-  }
 
 
   add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
@@ -230,50 +133,6 @@
   }
 
 
-
-
-  add_action("manage_posts_custom_column",  "keikka_custom_columns");
-  add_filter("manage_edit-keikka_columns", "keikka_edit_columns");
-
-  function keikka_edit_columns($columns){
-    $columns = array(
-      "title" => "Otsikko",
-      "paikkakunta" => "Paikkakunta",
-      "maa" => "Maa",
-
-      "date_" => "Keikan päivämäärä",
-      "url" => "URL",
-    );
-
-    return $columns;
-  }
-  function keikka_custom_columns($column){
-    global $post;
-
-    switch ($column) {
-
-
-
-      case "paikkakunta":
-         $custom = get_post_custom();
-        echo $custom["paikkakunta"][0];
-        break;
-
-      case "maa":
-         $custom = get_post_custom();
-        echo $custom["maa"][0];
-        break;
-
-      case "date_":
-        $custom = get_post_custom();
-        echo $custom["date_"][0];
-        break;
-      case "url":
-        $custom = get_post_custom();
-        echo $custom["url"][0];
-        break;
-    }
-  }
 
   add_filter('enter_title_here', 'my_title_place_holder' , 20 , 2 );
       function my_title_place_holder($title , $post){	//asettaa otsikko-osion placeholderin
