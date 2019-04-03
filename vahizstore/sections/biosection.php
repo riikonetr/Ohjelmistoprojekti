@@ -25,3 +25,19 @@
         endwhile;
     }
 ?>
+
+<div class="container">
+  <div id="band-members" class="bandmembers row">
+    <!-- dude 1 -->
+    <?php foreach(array(1, 2, 3, 4, 5) as $value): ?>
+    <div class="col-lg col-md col-sm col">
+        <figure class="member-container">
+          <img class="member-image" width="200" height="300"  src="http://placekitten.com/200/300">
+          <div class="member-middle">
+            <div class="member-text">John Doe</div>
+          </div>
+        </figure>
+    </div><!-- end col -->
+  <?php endforeach; ?>
+  </div>
+</div><!-- container -->
