@@ -35,6 +35,7 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 		public function customize_register( $wp_customize ) {
                     define( 'CUSTOMIZER_REPEATER_VERSION', '1.1.0' );
                     require_once( 'customizer-repeater-control.php' );
+										require_once( 'control-repeater.php' );
 
                     $wp_customize->add_panel( 'frontpage_panel', array(
                         'title' => __( 'Frontpage settings', 'vahizstore' ),
@@ -215,6 +216,49 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 																		'settings' => 'blog_visible',
 																		'type' => 'checkbox',
 										)));
+
+
+										$wp_customize->add_section( 'onepress_team_content' ,
+											array(
+												'priority'    => 6,
+												'title'       => esc_html__( 'Band Members', 'vahizstore' ),
+												'description' => '',
+												'panel'       => 'frontpage_panel',
+											)
+										);
+
+										// Team member settings
+										$wp_customize->add_setting(
+											'onepress_team_members',
+											array(
+												'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+												'transport' => 'refresh', // refresh or postMessage
+											) );
+
+
+										$wp_customize->add_control(new Onepress_Customize_Repeatable_Control( $wp_customize, 'onepress_team_members', array(
+																		'label'     => esc_html__('Team members', 'vahizstore'),
+																		'description'   => '',
+																		'section'       => 'onepress_team_content',
+																		//'live_title_id' => 'user_id', // apply for unput text and textarea only
+																		'title_format'  => esc_html__( '[live_title]', 'vahizstore'), // [live_title]
+																		'max_item'      => 6, // Maximum item can add
+																		'limited_msg' 	=> wp_kses_post( __( 'Pois tällaset', 'vahizstore' ) ),
+																		'fields'    => array(
+																			'user_id' => array(
+																				'title' => esc_html__('User media', 'vahizstore'),
+																				'type'  =>'media',
+																				'desc'  => '',
+																			),
+																			'link' => array(
+																				'title' => esc_html__('Custom Link', 'vahizstore'),
+																				'type'  =>'text',
+																				'desc'  => '',
+																			),
+																		),
+																	)
+																)
+															);
 
 
 

@@ -1,6 +1,5 @@
-
 <?php
-/* Template name: bio_template */ 
+/* Template name: bio_template */
 
 /*
  * @package VahizStore
@@ -70,7 +69,7 @@
               <img width="170" height="170" src="http://192.168.0.103/wp-content/themes/storefront-child/assets/img/brad.png">
 							<h3>Brad</h3>
               </figure>
-			
+
              			</div><!-- end col -->
 
 						<!-- dude 5 -->
@@ -86,8 +85,3 @@
 					</div><!-- band mebers -->
 
 				</div><!-- container -->
-
-
-
-
-
