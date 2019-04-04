@@ -40,6 +40,57 @@ function curator_feed($id) {
 }
 
 /**
+ * Create Songkick feed.
+ *
+ * @since  1.0.0
+ */
+
+function songkick_tourbox_href() {
+    
+    $id = songkick_id(); 
+    $href =''; 
+   
+
+    if ( $id ) {
+
+        $href = href("https://www.songkick.com/artists/" . $id ); 
+    }
+
+    echo esc_attr( $href );
+}
+
+function songkick_tourbox_src() {
+    
+    $id = songkick_id();     
+    $widget_src = '';
+
+    if ( $id ) {
+
+        $widget_src = source("//widget.songkick.com/" . $id . "/widget.js");
+    }
+
+    echo esc_attr( $widget_src );
+}
+
+
+function songkick_id() {
+
+    $id = get_theme_mod( 'artist_id' );
+
+    return esc_attr( $id );
+}
+
+
+function title() {
+
+    $name = get_theme_mod( 'band_name' );
+    $heading = $name.' '.'tour dates';
+
+    echo esc_attr( $heading );
+}
+
+
+/**
  * Create src.
  *
  * @since  1.0.0
