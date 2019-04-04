@@ -34,24 +34,43 @@
                 <?php do_action('vahizstore_header_cart'); ?>
                 <div class="navbar-collapse collapse justify-content-center" id="navbar">
                     <ul class="navbar-nav">
+
+                      <?php if(get_theme_mod('social_visible')) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="#social">Feed</a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('media_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#media">Media</a>
+                            <a class="nav-link" href="#youtube">Media</a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('bio_visible')) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="#bio">Bio</a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('tour_visible')) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="#tour">Tour</a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('shop_visible')) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="#shop">Shop</a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('blog_visible')) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="#blog">Blog</a>
                         </li>
+                      <?php endif; ?>
+
                     </ul>
                 </div>
             </nav>

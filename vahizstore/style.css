@@ -137,41 +137,41 @@ section .section-title {
 }
 
 /* Hover effect for bio band pics */
+/*TODO Merge with shopwindow hover? */
 
 .member-image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-
-.member-middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.member-container:hover .member-image {
-  opacity: 0.85;
-}
-
-.member-container:hover .member-middle {
-  opacity: 1;
+  -webkit-filter: brightness(100%);
 }
 
 .member-text {
-  background-color: transparent;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .45s ease;
+  -moz-transition: all .45s ease;
+  -ms-transition: all .45s ease;
+  -o-transition: all .45s ease;
+  transition: all .45s ease;
 }
+
+.member-container:hover .member-image {
+  -webkit-filter: brightness(50%);
+}
+
+.member-container:hover .member-text {
+  visibility: visible;
+  top: 50%;
+  opacity: 1;
+}
+
+
 
 /* Hover effect for shop window products */
 .product-img {
