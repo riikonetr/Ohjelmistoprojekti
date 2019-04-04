@@ -37,7 +37,6 @@ border-radius: 0px !important;
 }
 </style>
 
-<h3><center>Media</center></h3>
 <!--Carousel Wrapper-->
 <div id="video-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
 

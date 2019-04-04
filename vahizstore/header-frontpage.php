@@ -38,10 +38,7 @@
                             <a class="nav-link" href="#social">Feed</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#spotify">Music</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#youtube">Videos</a>
+                            <a class="nav-link" href="#media">Media</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#bio">Bio</a>
