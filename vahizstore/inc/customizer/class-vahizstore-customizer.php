@@ -126,11 +126,9 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
  		    $wp_customize->add_setting('band_name');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'band_name', array(
                         'label'   => esc_html__('Band\'s name','vahizshop'),
-                        //'item_name' => 'BandName',
                         'section' => 'tour_section',
 			'settings' => 'band_name',
-                        //'customizer_repeater_link_control' => true,
-			'type' => 'text',
+                        'type' => 'text',
                     )));
 
                     $wp_customize->add_setting('artist_id');
