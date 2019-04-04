@@ -17,6 +17,7 @@ class Customizer_Repeater extends WP_Customize_Control {
 	private $add_field_label = array();
 	private $customizer_icon_container = '';
 	private $allowed_html = array();
+        public $customizer_repeater_image_control = false;
 	public $customizer_repeater_icon_control = false;
 	public $customizer_repeater_title_control = false;
 	public $customizer_repeater_text_control = false;
@@ -34,6 +35,9 @@ class Customizer_Repeater extends WP_Customize_Control {
 			$this->boxtitle = $args['item_name'];
 		} elseif ( ! empty( $this->label ) ) {
 			$this->boxtitle = $this->label;
+		}
+                if ( ! empty( $args['customizer_repeater_image_control'] ) ) {
+			$this->customizer_repeater_image_control = $args['customizer_repeater_image_control'];
 		}
 		if ( ! empty( $args['customizer_repeater_icon_control'] ) ) {
 			$this->customizer_repeater_icon_control = $args['customizer_repeater_icon_control'];
@@ -123,13 +127,12 @@ class Customizer_Repeater extends WP_Customize_Control {
                     </div>
                     <div class="customizer-repeater-box-content-hidden">
 						<?php
-						$choice = $image_url = $icon_value = $title = $text = $link = '';
 						if(!empty($icon->id)){
 							$id = $icon->id;
 						}
-						if(!empty($icon->choice)){
-							$choice = $icon->choice;
-						}
+                                                if(!empty($icon->image_url)){
+							$image_url = $icon->image_url;
+                                                }
 						if(!empty($icon->icon_value)){
 							$icon_value = $icon->icon_value;
 						}
@@ -142,8 +145,11 @@ class Customizer_Repeater extends WP_Customize_Control {
 						if(!empty($icon->link)){
 							$link = $icon->link;
 						}
+                                                if($this->customizer_repeater_image_control == true){
+							$this->image_control($image_url);
+						}
 						if($this->customizer_repeater_icon_control == true){
-							$this->icon_picker_control($icon_value, $choice);
+							$this->icon_picker_control($icon_value);
 						}
 						if($this->customizer_repeater_title_control==true){
 							$this->input_control(array(
@@ -191,6 +197,9 @@ class Customizer_Repeater extends WP_Customize_Control {
                 </div>
                 <div class="customizer-repeater-box-content-hidden">
 					<?php
+                                        if ( $this->customizer_repeater_image_control == true ) {
+						$this->image_control();
+					}
 					if ( $this->customizer_repeater_icon_control == true ) {
 						$this->icon_picker_control();
 					}
@@ -254,9 +263,9 @@ class Customizer_Repeater extends WP_Customize_Control {
 		}
 	}
         
-	private function icon_picker_control($value = '', $show = ''){
+	private function icon_picker_control($value = ''){
 		?>
-                <div class="social-repeater-general-control-icon" <?php if( $show === 'customizer_repeater_image' || $show === 'customizer_repeater_none' ) { echo 'style="display:none;"'; } ?>>
+                <div class="social-repeater-general-control-icon">
                     <span class="customize-control-title">
                         <?php esc_html_e('Icon','vahizshop'); ?>
                     </span>
@@ -274,6 +283,17 @@ class Customizer_Repeater extends WP_Customize_Control {
                         </span>
                     </div>
                                 <?php get_template_part( $this->customizer_icon_container ); ?>
+                </div>
+                        <?php
+	}
+        
+        private function image_control($value = ''){ ?>
+                <div class="customizer-repeater-image-control">
+                    <span class="customize-control-title">
+                        <?php esc_html_e('Image','your-textdomain')?>
+                    </span>
+                    <input type="text" class="widefat custom-media-url" value="<?php echo esc_attr( $value ); ?>">
+                    <input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="<?php esc_attr_e( 'Upload Image','your-textdomain' ); ?>" />
                 </div>
                         <?php
 	}

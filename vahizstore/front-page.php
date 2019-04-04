@@ -62,7 +62,7 @@ get_header("frontpage");
       <div class="container">
           <div class="row">
               <div class="col-sm-12">
-                  <?php get_template_part('sections/biosection', 'section'); ?>
+                  <?php get_template_part('sections/bio', 'section'); ?>
               </div>
           </div>
       </div>

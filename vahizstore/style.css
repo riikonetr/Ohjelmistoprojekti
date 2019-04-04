@@ -173,6 +173,43 @@ section .section-title {
   padding: 16px 32px;
 }
 
+/* Hover effect for shop window products */
+.product-img {
+    -webkit-filter: brightness(100%);
+    height: 100%;
+    width: 100%;
+}
+.product-onsale {
+    font-style: italic;
+}
+.product-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    text-transform: uppercase;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .45s ease;
+    -moz-transition: all .45s ease;
+    -ms-transition: all .45s ease;
+    -o-transition: all .45s ease;
+    transition: all .45s ease;
+}
+
+.product-link:hover .product-img {
+    -webkit-filter: brightness(50%);
+}
+
+.product-link:hover .product-text {
+    visibility: visible;
+    top: 50%;
+    opacity: 1;
+}
+
 /* Kauppa */
 
 .product-template-default
