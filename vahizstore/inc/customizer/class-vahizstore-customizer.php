@@ -35,7 +35,6 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 		public function customize_register( $wp_customize ) {
                     define( 'CUSTOMIZER_REPEATER_VERSION', '1.1.0' );
                     require_once( 'customizer-repeater-control.php' );
-										require_once( 'control-repeater.php' );
 
                     $wp_customize->add_panel( 'frontpage_panel', array(
                         'title' => __( 'Frontpage settings', 'vahizstore' ),
@@ -90,43 +89,57 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'type' => 'text',
                     )));
 
-                    // Media section
-                    $wp_customize->add_section('media_section', array(
-                        'title'    => __('Media links', 'vahizstore'),
+                    // Spotify section
+                    $wp_customize->add_section('spotify_section', array(
+                        'title'    => __('Spotify link', 'vahizstore'),
                         'panel' => 'frontpage_panel',
                     ));
 
-										$wp_customize->add_setting('youtube_media_visible');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'youtube_media_visible', array(
-																		'label'    => __('Show Youtube', 'vahizstore'),
-																		'section'  => 'media_section',
-																		'settings' => 'youtube_media_visible',
-																		'type' => 'checkbox',
-										)));
+                    $wp_customize->add_setting('spotify_link');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'spotify_link', array(
+                        'label'    => __('Spotify link', 'vahizstore'),
+                        'section'  => 'spotify_section',
+                        'settings' => 'spotify_link',
+                        'type' => 'url',
+                    )));
 
-										$wp_customize->add_setting('spotify_media_visible');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'spotify_media_visible', array(
-																		'label'    => __('Show Spotify', 'vahizstore'),
-																		'section'  => 'media_section',
-																		'settings' => 'spotify_media_visible',
-																		'type' => 'checkbox',
-										)));
+                    // Youtube section
+                    $wp_customize->add_section('youtube_section', array(
+                        'title'    => __('Youtube videos', 'vahizstore'),
+                        'panel' => 'frontpage_panel',
+                    ));
 
                     $wp_customize->add_setting('youtube_videos');
                     $wp_customize->add_control( new Customizer_Repeater($wp_customize, 'youtube_videos', array(
-                        'label'   => esc_html__('Youtube Links','vahizshop'),
+                        'label'   => esc_html__('Links','vahizshop'),
                         'item_name' => 'Link',
-                        'section' => 'media_section',
+                        'section' => 'youtube_section',
                         'customizer_repeater_link_control' => true,
                     )));
 
-										$wp_customize->add_setting('spotify_link');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'spotify_link', array(
-												'label'    => __('Spotify link', 'vahizstore'),
-												'section'  => 'media_section',
-												'settings' => 'spotify_link',
-												'type' => 'url',
-										)));
+  		    // Tour section
+                    $wp_customize->add_section('tour_section', array(
+                        'title'    => __('Songkick', 'vahizstore'),
+                        'panel' => 'frontpage_panel',
+                    ));
+
+ 		    $wp_customize->add_setting('band_name');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'band_name', array(
+                        'label'   => esc_html__('Band\'s name','vahizshop'),
+                        //'item_name' => 'BandName',
+                        'section' => 'tour_section',
+			'settings' => 'band_name',
+                        //'customizer_repeater_link_control' => true,
+			'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('artist_id');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'artist_id', array(
+                        'label'   => esc_html__('Artist id','vahizshop'),
+                        'item_name' => 'ArtistId',
+                        'section' => 'tour_section',
+			'settings' => 'artist_id',                      
+                    )));             
 
                     // Footer section
                     $wp_customize->add_section('social_section', array(
@@ -170,7 +183,7 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 																		'settings' => 'social_visible',
 																		'type' => 'checkbox',
 										)));
-										/*
+
 										$wp_customize->add_setting('spotify_visible');
 										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'spotify_visible', array(
 																		'label'    => __('Spotify', 'vahizstore'),
@@ -178,12 +191,12 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 																		'settings' => 'spotify_visible',
 																		'type' => 'checkbox',
 										)));
-										*/
-										$wp_customize->add_setting('media_visible');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'media_visible', array(
-																		'label'    => __('Media', 'vahizstore'),
+
+										$wp_customize->add_setting('youtube_visible');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'youtube_visible', array(
+																		'label'    => __('Youtube', 'vahizstore'),
 																		'section'  => 'visibility_section',
-																		'settings' => 'media_visible',
+																		'settings' => 'youtube_visible',
 																		'type' => 'checkbox',
 										)));
 
@@ -203,7 +216,6 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 																		'type' => 'checkbox',
 										)));
 
-										//ONKO OK? -lkoh
 										$wp_customize->add_setting('shop_visible');
 										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'shop_visible', array(
 																		'label'    => __('Bio', 'vahizstore'),
@@ -212,7 +224,6 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 																		'type' => 'checkbox',
 										)));
 
-										//ONKO OK? -lkoh
 										$wp_customize->add_setting('shop_visible');
 										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'shop_visible', array(
 																		'label'    => __('Shop', 'vahizstore'),
@@ -228,49 +239,6 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 																		'settings' => 'blog_visible',
 																		'type' => 'checkbox',
 										)));
-
-
-										$wp_customize->add_section( 'onepress_team_content' ,
-											array(
-												'priority'    => 6,
-												'title'       => esc_html__( 'Band Members', 'vahizstore' ),
-												'description' => '',
-												'panel'       => 'frontpage_panel',
-											)
-										);
-
-										// Team member settings
-										$wp_customize->add_setting(
-											'onepress_team_members',
-											array(
-												'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-												'transport' => 'refresh', // refresh or postMessage
-											) );
-
-
-										$wp_customize->add_control(new Onepress_Customize_Repeatable_Control( $wp_customize, 'onepress_team_members', array(
-																		'label'     => esc_html__('Team members', 'vahizstore'),
-																		'description'   => '',
-																		'section'       => 'onepress_team_content',
-																		//'live_title_id' => 'user_id', // apply for unput text and textarea only
-																		'title_format'  => esc_html__( '[live_title]', 'vahizstore'), // [live_title]
-																		'max_item'      => 6, // Maximum item can add
-																		'limited_msg' 	=> wp_kses_post( __( 'Pois tällaset', 'vahizstore' ) ),
-																		'fields'    => array(
-																			'user_id' => array(
-																				'title' => esc_html__('User media', 'vahizstore'),
-																				'type'  =>'media',
-																				'desc'  => '',
-																			),
-																			'link' => array(
-																				'title' => esc_html__('Custom Link', 'vahizstore'),
-																				'type'  =>'text',
-																				'desc'  => '',
-																			),
-																		),
-																	)
-																)
-															);
 
 
 
