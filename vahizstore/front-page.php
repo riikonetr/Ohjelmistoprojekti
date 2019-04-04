@@ -22,7 +22,7 @@ get_header("frontpage");
 </div>
 
 <?php if(get_theme_mod('social_visible')) : ?>
-  <section id="social">
+  <section id="social" class="parallax" style="<?php vahizstore_img_1() ?>">>
       <div class="container">
           <div class="row">
               <div class="col-sm-12">
@@ -33,24 +33,12 @@ get_header("frontpage");
   </section>
 <?php endif; ?>
 
-<?php if(get_theme_mod('spotify_visible')) : ?>
-  <section id="spotify" class="parallax" style="<?php vahizstore_img_1() ?>">
+<?php if(get_theme_mod('media_visible')) : ?>
+  <section id="media">
       <div class="container">
           <div class="row">
               <div class="col-sm-12">
-                  <?php get_template_part('sections/spotify', 'section'); ?>
-              </div>
-          </div>
-      </div>
-  </section>
-<?php endif; ?>
-
-<?php if(get_theme_mod('youtube_visible')) : ?>
-  <section id="youtube">
-      <div class="container">
-          <div class="row">
-              <div class="col-sm-12">
-                  <?php get_template_part('sections/youtube', 'section'); ?>
+                  <?php get_template_part('sections/media', 'section'); ?>
               </div>
           </div>
       </div>
@@ -98,7 +86,9 @@ get_header("frontpage");
   <section id="blog">
     <div class="container">
       <div class="row">
+        <div class="col-sm-12">
           <?php get_template_part('sections/blog', 'section'); ?>
+        <div>
       </div>
     </div>
   </section>
