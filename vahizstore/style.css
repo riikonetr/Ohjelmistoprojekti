@@ -75,24 +75,25 @@ header .parallax {
     color: white;
 }
 
-#navbar a:hover {
+#navbar a:hover,
+.frontpage-cart-contents:hover .header-basket
+{
     text-shadow: 0px -2px 15px rgb(255, 255, 255);
     color: rgb(160, 175, 255);
 }
 
-.frontpage-cart{
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-}
-
-.frontpage-cart a:hover{
-    text-decoration: underline;
-}
-
 .header-basket {
-    line-height: 1.6;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
+}
+
+.frontpage-cart-contents {
+    position: absolute;
+    top: 24px;
+    right: 10px;
+}
+
+.frontpage-cart-contents:hover .header-badge {
+    background-color: rgb(160, 175, 255);
 }
 
 section .section-title {
@@ -104,7 +105,7 @@ section .section-title {
 
 .sidebar {
     height: 100vh;
-    width: 10%;
+    width: 150px;
     position: fixed;
     right: 0;
     top: 0;
@@ -120,6 +121,8 @@ section .section-title {
     padding-top: 60px;
     padding-bottom: 20px;
     background: #343a40;
+    position: relative;
+    z-index: 1;
 }
 
 .sidebar a, footer a {
@@ -256,4 +259,49 @@ body.woocommerce #primary {
 
 #customer_details .col-1, .col-2 {
   max-width: 100%;
+}
+
+/* Changes based on browser width */
+@media only screen and (max-width: 1339px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .sidebar {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 1158px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .sidebar {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 921px) {
+    .sidebar {
+        display: none;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .sidebar {
+        display: flex;
+    }
+    .frontpage-cart-contents{
+        top: 10px;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .sidebar {
+        display: none;
+    }
 }

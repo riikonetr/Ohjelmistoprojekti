@@ -27,7 +27,7 @@
                     <?php site_header_logo() ?>
                 </div>
             </div>
-            <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
+            <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
                     <a class="navbar-toggler-icon"></a>
                 </button>
