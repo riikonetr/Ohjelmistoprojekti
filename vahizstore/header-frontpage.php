@@ -43,7 +43,7 @@
 
                       <?php if(get_theme_mod('media_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#youtube">Media</a>
+                            <a class="nav-link" href="#media">Media</a>
                         </li>
                       <?php endif; ?>
 

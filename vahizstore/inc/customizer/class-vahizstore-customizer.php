@@ -164,6 +164,19 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 			'settings' => 'artist_id',
                     )));
 
+										//Blog section
+										$wp_customize->add_section('blog_section', array(
+                        'title'    => __('Blog settings', 'vahizstore'),
+                        'panel' => 'frontpage_panel',
+                    ));
+
+										$wp_customize->add_setting('blog_default_image');
+										$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'blog_default_image', array(
+												'label'    => __('Blog default image', 'vahizstore'),
+												'section'  => 'blog_section',
+												'settings' => 'blog_default_image',
+										)));
+
                     // Footer section
                     $wp_customize->add_section('social_section', array(
                         'title'    => __('Social links', 'vahizstore'),
