@@ -48,7 +48,6 @@ function awesomefonts_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'awesomefonts_enqueue_styles');
 
-add_action('init', 'keikka_register');
 
 /**
 * Customize new product editor

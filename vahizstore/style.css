@@ -65,6 +65,7 @@ header .parallax {
     left: 0;
     right: 0;
     position: absolute;
+    max-width: 800px;
 }
 
 /* Little bit more style for navbar links */
@@ -144,6 +145,9 @@ section .section-title {
 
 .member-image {
   -webkit-filter: brightness(100%);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .member-text {
