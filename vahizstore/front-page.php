@@ -16,13 +16,26 @@ get_header("frontpage");
 ?>
 
 <div class="sidebar">
-    <ul class="list-group">
-        <?php social_links_sidebar() ?>
+    <ul class="nav flex-column">
+<?php
+    $social_links = get_theme_mod('social_links', json_encode( array(/*The content from your default parameter or delete this argument if you don't want a default*/)) );
+    /*This returns a json so we have to decode it*/
+    $social_links_decoded = json_decode($social_links);
+    foreach($social_links_decoded as $social_link){
+?>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo $social_link->link ?>">
+                <span class="fab <?php echo $social_link->icon_value ?>"></span>
+            </a>
+        </li>
+<?php
+    }
+?>
     </ul>
 </div>
 
 <?php if(get_theme_mod('social_visible')) : ?>
-  <section id="social" class="parallax" style="<?php vahizstore_img_1() ?>">>
+  <section id="social" class="parallax" style="<?php vahizstore_img_1() ?>">
       <div class="container">
           <div class="row">
               <div class="col-sm-12">

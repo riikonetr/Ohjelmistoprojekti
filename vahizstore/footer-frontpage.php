@@ -47,8 +47,21 @@
             <!-- Footer Links -->
 
             <!-- Social buttons -->
-            <ul class="list-unstyled list-inline text-center">
-              <?php social_links_footer(); ?>
+            <ul class="nav justify-content-center">
+<?php
+            $social_links = get_theme_mod('social_links', json_encode( array(/*The content from your default parameter or delete this argument if you don't want a default*/)) );
+            /*This returns a json so we have to decode it*/
+            $social_links_decoded = json_decode($social_links);
+            foreach($social_links_decoded as $social_link){
+?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $social_link->link ?>">
+                        <span class="fab <?php echo $social_link->icon_value ?>"></span>
+                    </a>
+                </li>
+<?php
+            }
+?>
             </ul>
             <!-- Social buttons -->
 

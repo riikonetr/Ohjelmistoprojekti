@@ -22,6 +22,7 @@ class Customizer_Repeater extends WP_Customize_Control {
 	public $customizer_repeater_title_control = false;
 	public $customizer_repeater_text_control = false;
 	public $customizer_repeater_link_control = false;
+        public $description = '';
 	/*Class constructor*/
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
@@ -50,6 +51,9 @@ class Customizer_Repeater extends WP_Customize_Control {
 		}
 		if ( ! empty( $args['customizer_repeater_link_control'] ) ) {
 			$this->customizer_repeater_link_control = $args['customizer_repeater_link_control'];
+		}
+                if ( ! empty( $args['description'] ) ) {
+			$this->description = $args['description'];
 		}
 		if ( ! empty( $id ) ) {
 			$this->id = $id;
@@ -126,54 +130,57 @@ class Customizer_Repeater extends WP_Customize_Control {
 						<?php echo esc_html( $this->boxtitle ) ?>
                     </div>
                     <div class="customizer-repeater-box-content-hidden">
-						<?php
-						if(!empty($icon->id)){
-							$id = $icon->id;
-						}
-                                                if(!empty($icon->image_url)){
-							$image_url = $icon->image_url;
-                                                }
-						if(!empty($icon->icon_value)){
-							$icon_value = $icon->icon_value;
-						}
-						if(!empty($icon->title)){
-							$title = $icon->title;
-						}
-						if(!empty($icon->text)){
-							$text = $icon->text;
-						}
-						if(!empty($icon->link)){
-							$link = $icon->link;
-						}
-                                                if($this->customizer_repeater_image_control == true){
-							$this->image_control($image_url);
-						}
-						if($this->customizer_repeater_icon_control == true){
-							$this->icon_picker_control($icon_value);
-						}
-						if($this->customizer_repeater_title_control==true){
-							$this->input_control(array(
-								'label' => apply_filters('repeater_input_labels_filter', esc_html__( 'Title','vahizshop' ), $this->id, 'customizer_repeater_title_control' ),
-								'class' => 'customizer-repeater-title-control',
-								'type'  => apply_filters('customizer_repeater_input_types_filter', '', $this->id, 'customizer_repeater_title_control' ),
-							), $title);
-						}
-						if($this->customizer_repeater_text_control==true){
-							$this->input_control(array(
-								'label' => apply_filters('repeater_input_labels_filter', esc_html__( 'Text','vahizshop' ), $this->id, 'customizer_repeater_text_control' ),
-								'class' => 'customizer-repeater-text-control',
-								'type'  => apply_filters('customizer_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_text_control' ),
-							), $text);
-						}
-						if($this->customizer_repeater_link_control){
-							$this->input_control(array(
-								'label' => apply_filters('repeater_input_labels_filter', esc_html__( 'Link','vahizshop' ), $this->id, 'customizer_repeater_link_control' ),
-								'class' => 'customizer-repeater-link-control',
-								'sanitize_callback' => 'esc_url_raw',
-								'type'  => apply_filters('customizer_repeater_input_types_filter', '', $this->id, 'customizer_repeater_link_control' ),
-							), $link);
-						}
-                                                ?>
+                        <div class="description customize-control-description">
+                            <?php echo esc_html( $this->description ) ?>
+                        </div>
+                        <?php
+                        if(!empty($icon->id)){
+                                $id = $icon->id;
+                        }
+                        if(!empty($icon->image_url)){
+                                $image_url = $icon->image_url;
+                        }
+                        if(!empty($icon->icon_value)){
+                                $icon_value = $icon->icon_value;
+                        }
+                        if(!empty($icon->title)){
+                                $title = $icon->title;
+                        }
+                        if(!empty($icon->text)){
+                                $text = $icon->text;
+                        }
+                        if(!empty($icon->link)){
+                                $link = $icon->link;
+                        }
+                        if($this->customizer_repeater_image_control == true){
+                                $this->image_control($image_url);
+                        }
+                        if($this->customizer_repeater_icon_control == true){
+                                $this->icon_picker_control($icon_value);
+                        }
+                        if($this->customizer_repeater_title_control==true){
+                                $this->input_control(array(
+                                        'label' => apply_filters('repeater_input_labels_filter', esc_html__( 'Title','vahizshop' ), $this->id, 'customizer_repeater_title_control' ),
+                                        'class' => 'customizer-repeater-title-control',
+                                        'type'  => apply_filters('customizer_repeater_input_types_filter', '', $this->id, 'customizer_repeater_title_control' ),
+                                ), $title);
+                        }
+                        if($this->customizer_repeater_text_control==true){
+                                $this->input_control(array(
+                                        'label' => apply_filters('repeater_input_labels_filter', esc_html__( 'Text','vahizshop' ), $this->id, 'customizer_repeater_text_control' ),
+                                        'class' => 'customizer-repeater-text-control',
+                                        'type'  => apply_filters('customizer_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_text_control' ),
+                                ), $text);
+                        }
+                        if($this->customizer_repeater_link_control){
+                                $this->input_control(array(
+                                        'label' => apply_filters('repeater_input_labels_filter', esc_html__( 'Link','vahizshop' ), $this->id, 'customizer_repeater_link_control' ),
+                                        'class' => 'customizer-repeater-link-control',
+                                        'sanitize_callback' => 'esc_url_raw',
+                                        'type'  => apply_filters('customizer_repeater_input_types_filter', '', $this->id, 'customizer_repeater_link_control' ),
+                                ), $link);
+                        }
+                        ?>
 
                         <input type="hidden" class="social-repeater-box-id" value="<?php if ( ! empty( $id ) ) {
 							echo esc_attr( $id );

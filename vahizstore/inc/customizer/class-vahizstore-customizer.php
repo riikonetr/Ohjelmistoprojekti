@@ -86,6 +86,7 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'label'    => __('Curator id', 'vahizstore'),
                         'section'  => 'curator_section',
                         'settings' => 'curator_id',
+                        'description' => 'Give the id of your Curator. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX (32 characters long).',
                         'type' => 'text',
                     )));
 
@@ -95,37 +96,39 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'panel' => 'frontpage_panel',
                     ));
 
-										$wp_customize->add_setting('youtube_media_visible');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'youtube_media_visible', array(
-																		'label'    => __('Show Youtube', 'vahizstore'),
-																		'section'  => 'media_section',
-																		'settings' => 'youtube_media_visible',
-																		'type' => 'checkbox',
-										)));
-
-										$wp_customize->add_setting('spotify_media_visible');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'spotify_media_visible', array(
-																		'label'    => __('Show Spotify', 'vahizstore'),
-																		'section'  => 'media_section',
-																		'settings' => 'spotify_media_visible',
-																		'type' => 'checkbox',
-										)));
-
-                    $wp_customize->add_setting('youtube_videos');
-                    $wp_customize->add_control( new Customizer_Repeater($wp_customize, 'youtube_videos', array(
-                        'label'   => esc_html__('Youtube Links','vahizshop'),
-                        'item_name' => 'Link',
-                        'section' => 'media_section',
-                        'customizer_repeater_link_control' => true,
+                    $wp_customize->add_setting('youtube_media_visible');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'youtube_media_visible', array(
+                        'label'    => __('Show Youtube', 'vahizstore'),
+                        'section'  => 'media_section',
+                        'settings' => 'youtube_media_visible',
+                        'type' => 'checkbox',
                     )));
 
-										$wp_customize->add_setting('spotify_link');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'spotify_link', array(
-												'label'    => __('Spotify link', 'vahizstore'),
-												'section'  => 'media_section',
-												'settings' => 'spotify_link',
-												'type' => 'url',
-										)));
+                    $wp_customize->add_setting('spotify_media_visible');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'spotify_media_visible', array(
+                        'label'    => __('Show Spotify', 'vahizstore'),
+                        'section'  => 'media_section',
+                        'settings' => 'spotify_media_visible',
+                        'type' => 'checkbox',
+                    )));
+
+                    $wp_customize->add_setting('youtube_link_ids');
+                    $wp_customize->add_control( new Customizer_Repeater($wp_customize, 'youtube_link_ids', array(
+                        'label'   => esc_html__('Youtube Link Ids','vahizshop'),
+                        'item_name' => 'Link id',
+                        'section' => 'media_section',
+                        'description' => 'Give the id of youtube page you wish to display. It is the part after v= https://www.youtube.com/watch?v=XXXXXXXXXXX (11 characters long).',
+                        'customizer_repeater_text_control' => true,
+                    )));
+
+                    $wp_customize->add_setting('spotify_link_id');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'spotify_link_id', array(
+                        'label'    => __('Spotify link', 'vahizstore'),
+                        'section'  => 'media_section',
+                        'settings' => 'spotify_link_id',
+                        'description' => 'Give the id of spotify page you wish to display. It is the last part of address https://open.spotify.com/artist/XXXXXXXXXXXXXXXXXXXXXX (22 characters long).',
+                        'type' => 'text',
+                    )));
 
                     // Member section (Bio)
                     $wp_customize->add_section('member_section', array(
@@ -164,18 +167,18 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 			'settings' => 'artist_id',
                     )));
 
-										//Blog section
-										$wp_customize->add_section('blog_section', array(
+                    //Blog section
+                    $wp_customize->add_section('blog_section', array(
                         'title'    => __('Blog settings', 'vahizstore'),
                         'panel' => 'frontpage_panel',
                     ));
 
-										$wp_customize->add_setting('blog_default_image');
-										$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'blog_default_image', array(
-												'label'    => __('Blog default image', 'vahizstore'),
-												'section'  => 'blog_section',
-												'settings' => 'blog_default_image',
-										)));
+                    $wp_customize->add_setting('blog_default_image');
+                    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'blog_default_image', array(
+                        'label'    => __('Blog default image', 'vahizstore'),
+                        'section'  => 'blog_section',
+                        'settings' => 'blog_default_image',
+                    )));
 
                     // Footer section
                     $wp_customize->add_section('social_section', array(
@@ -194,80 +197,70 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 
                     // Contact details
                     $wp_customize->add_section('contact_section', array(
-                                    'title'    => __('Contact details', 'vahizstore'),
-                                    'panel' => 'frontpage_panel',
+                        'title'    => __('Contact details', 'vahizstore'),
+                        'panel' => 'frontpage_panel',
                     ));
 
                     $wp_customize->add_setting('contact_email');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_email', array(
-                                    'label'    => __('Contact email', 'vahizstore'),
-                                    'section'  => 'social_section',
-                                    'settings' => 'contact_email',
-                                    'type' => 'email',
+                        'label'    => __('Contact email', 'vahizstore'),
+                        'section'  => 'social_section',
+                        'settings' => 'contact_email',
+                        'type' => 'email',
                     )));
 
                     // Hide/display sections
                     $wp_customize->add_section('visibility_section', array(
-                                    'title'    => __('Section visibility', 'vahizstore'),
-                                    'panel' => 'frontpage_panel',
+                        'title'    => __('Section visibility', 'vahizstore'),
+                        'panel' => 'frontpage_panel',
                     ));
 
                     $wp_customize->add_setting('social_visible');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'social_visible', array(
-                                    'label'    => __('Social feed', 'vahizstore'),
-                                    'section'  => 'visibility_section',
-                                    'settings' => 'social_visible',
-                                    'type' => 'checkbox',
+                        'label'    => __('Social feed', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'social_visible',
+                        'type' => 'checkbox',
                     )));
 
-										$wp_customize->add_setting('media_visible');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'media_visible', array(
-																		'label'    => __('Media', 'vahizstore'),
-																		'section'  => 'visibility_section',
-																		'settings' => 'media_visible',
-																		'type' => 'checkbox',
-										)));
+                    $wp_customize->add_setting('media_visible');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'media_visible', array(
+                        'label'    => __('Media', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'media_visible',
+                        'type' => 'checkbox',
+                    )));
 
                     $wp_customize->add_setting('bio_visible');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'bio_visible', array(
-                                    'label'    => __('Bio', 'vahizstore'),
-                                    'section'  => 'visibility_section',
-                                    'settings' => 'bio_visible',
-                                    'type' => 'checkbox',
+                        'label'    => __('Bio', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'bio_visible',
+                        'type' => 'checkbox',
                     )));
 
                     $wp_customize->add_setting('tour_visible');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'tour_visible', array(
-                                    'label'    => __('Tour', 'vahizstore'),
-                                    'section'  => 'visibility_section',
-                                    'settings' => 'tour_visible',
-                                    'type' => 'checkbox',
+                        'label'    => __('Tour', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'tour_visible',
+                        'type' => 'checkbox',
                     )));
 
-										//lkoh is this ok?
                     $wp_customize->add_setting('shop_visible');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'shop_visible', array(
-                                    'label'    => __('Bio', 'vahizstore'), //?
-                                    'section'  => 'visibility_section',
-                                    'settings' => 'shop_visible',
-                                    'type' => 'checkbox',
-                    )));
-
-										//lkoh is this ok?
-                    $wp_customize->add_setting('shop_visible');
-                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'shop_visible', array(
-                                    'label'    => __('Shop', 'vahizstore'), //?
-                                    'section'  => 'visibility_section',
-                                    'settings' => 'shop_visible',
-                                    'type' => 'checkbox',
+                        'label'    => __('Shop', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'shop_visible',
+                        'type' => 'checkbox',
                     )));
 
                     $wp_customize->add_setting('blog_visible');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'blog_visible', array(
-                                    'label'    => __('Blog', 'vahizstore'),
-                                    'section'  => 'visibility_section',
-                                    'settings' => 'blog_visible',
-                                    'type' => 'checkbox',
+                        'label'    => __('Blog', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'blog_visible',
+                        'type' => 'checkbox',
                     )));
 
 

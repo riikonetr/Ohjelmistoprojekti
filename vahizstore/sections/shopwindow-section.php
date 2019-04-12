@@ -22,7 +22,7 @@
         while ( $loop->have_posts() ) : $loop->the_post();
             if($counter % 3 == 0) {
 ?>
-                <div class="row">
+        <div class="row">
 <?php
             }
 ?>
@@ -54,13 +54,13 @@
             $counter++;
             if($counter % 3 == 0) {
 ?>
-                </div>
+        </div>
 <?php
             }
         endwhile;
         if($counter % 3 != 0) {
 ?>
-            </div>
+        </div>
 <?php
         }
     } else {

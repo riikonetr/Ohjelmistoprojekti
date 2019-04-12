@@ -170,8 +170,11 @@ function curator() {
  * @since  1.0.0
  */
 function spotify_url() {
-        $url = get_theme_mod( 'spotify_link' );
-        echo source($url);
+        $id = get_theme_mod( 'spotify_link_id' );
+        if($id) {
+            $embed_spotify = 'https://open.spotify.com/embed/artist/' . $id;
+            echo source($embed_spotify);
+        }
 }
 
 /**
@@ -184,35 +187,3 @@ function contact_email() {
         echo '<i class="fas fa-envelope mr-3"></i>';
         echo $email;
 }
-
-/**
- * Get social links.
- *
- * @since  1.0.0
- */
-function social_links_footer() {
-        $footer_links = get_theme_mod('social_links', json_encode( array(/*The content from your default parameter or delete this argument if you don't want a default*/)) );
-        /*This returns a json so we have to decode it*/
-        $customizer_repeater_example_decoded = json_decode($footer_links);
-        foreach($customizer_repeater_example_decoded as $repeater_item){
-            echo '<li class="list-inline-item">';
-            echo '<a class="nav-link" href="' . $repeater_item->link . '">';
-            echo '<span class="fab ' . $repeater_item->icon_value . '"></span>';
-            echo '</a>';
-            echo '</li>';
-        }
-}
-
-function social_links_sidebar() {
-        $footer_links = get_theme_mod('social_links', json_encode( array(/*The content from your default parameter or delete this argument if you don't want a default*/)) );
-        /*This returns a json so we have to decode it*/
-        $customizer_repeater_example_decoded = json_decode($footer_links);
-        foreach($customizer_repeater_example_decoded as $repeater_item){
-            echo '<li class="list-group-item">';
-            echo '<a class="nav-link" href="' . $repeater_item->link . '">';
-            echo '<span class="fab ' . $repeater_item->icon_value . '"></span>';
-            echo '</a>';
-            echo '</li>';
-        }
-}
-

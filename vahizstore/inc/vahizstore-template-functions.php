@@ -28,7 +28,7 @@ if ( ! function_exists( 'vahizstore_cart_link_fragment' ) ) {
 if ( ! function_exists( 'vahizstore_cart_link' ) ) {
 	/**
 	 * Cart Link
-	 * Displayed a link to the cart including the number of items present
+	 * Displays a link to the cart including the number of items present
 	 *
 	 * @return void
 	 * @since  1.0.0
