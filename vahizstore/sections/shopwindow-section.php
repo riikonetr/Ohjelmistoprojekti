@@ -8,13 +8,15 @@
 
 ?>
 
-<h3><center>Shop</center></h3>
+<h3><center><?php element_title('shop_title'); ?></center></h3>
 
 
 <?php
     $args = array(
         'post_type' => 'product',
-        'posts_per_page' => 12
+        'posts_per_page' => shop_posts_per_page(),
+        'orderby' => 'menu_order',
+        'order' => 'ASC'
     );
     $loop = new WP_Query( $args );
     if ( $loop->have_posts() ) {

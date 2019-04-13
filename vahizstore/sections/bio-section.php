@@ -8,7 +8,7 @@
 
 ?>
 
-<h3><center>Biography</center></h3>
+<h3><center><?php element_title('bio_title'); ?></center></h3>
 
 <?php
     $args = array(

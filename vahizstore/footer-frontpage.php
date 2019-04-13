@@ -27,7 +27,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 contact_col">
 
                   <!-- Links -->
                   <h6 class="text-uppercase font-weight-bold">Contact</h6>
@@ -47,7 +47,7 @@
             <!-- Footer Links -->
 
             <!-- Social buttons -->
-            <ul class="nav justify-content-center">
+            <ul class="social-nav nav justify-content-center">
 <?php
             $social_links = get_theme_mod('social_links', json_encode( array(/*The content from your default parameter or delete this argument if you don't want a default*/)) );
             /*This returns a json so we have to decode it*/

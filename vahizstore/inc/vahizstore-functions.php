@@ -46,22 +46,22 @@ function curator_feed($id) {
  */
 
 function songkick_tourbox_href() {
-    
-    $id = songkick_id(); 
-    $href =''; 
-   
+
+    $id = songkick_id();
+    $href ='';
+
 
     if ( $id ) {
 
-        $href = href("https://www.songkick.com/artists/" . $id ); 
+        $href = href("https://www.songkick.com/artists/" . $id );
     }
 
     echo esc_attr( $href );
 }
 
 function songkick_tourbox_src() {
-    
-    $id = songkick_id();     
+
+    $id = songkick_id();
     $widget_src = '';
 
     if ( $id ) {
@@ -80,15 +80,12 @@ function songkick_id() {
     return esc_attr( $id );
 }
 
+function element_title($title_id) {
 
-function title() {
-
-    $name = get_theme_mod( 'band_name' );
-    $heading = $name.' '.'tour dates';
-
-    echo esc_attr( $heading );
+  $title = get_theme_mod($title_id);
+  debug_to_console($title);
+  echo esc_attr( $title );
 }
-
 
 /**
  * Create src.
@@ -163,6 +160,16 @@ function curator() {
         $id = get_theme_mod( 'curator_id' );
         echo curator_feed($id);
 }
+
+/**
+ * Get shop_posts_per_page.
+ *
+ * @since  1.0.0
+ */
+ function shop_posts_per_page() {
+   return get_theme_mod( 'shop_items_per_page' );
+ }
+
 
 /**
  * Get spotify url.

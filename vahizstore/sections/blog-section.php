@@ -58,7 +58,7 @@
     }
 </style>
 
-<h3><center>Blog</center></h3>
+<h3><center><?php element_title('blog_title'); ?></center></h3>
 
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">

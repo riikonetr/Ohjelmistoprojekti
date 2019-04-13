@@ -7,7 +7,7 @@
  */
 
 ?>
-<h3><center>Media</center></h3>
+<h3><center><?php element_title('media_title'); ?></center></h3>
 
 <?php
 if(get_theme_mod('youtube_media_visible')) {

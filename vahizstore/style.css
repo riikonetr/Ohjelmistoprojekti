@@ -57,6 +57,10 @@ header .parallax {
     height: 100%;
 }
 
+.header-logo .row {
+  height: 100%;
+}
+
 .header-logo img {
     display:initial;
     margin: auto;
@@ -65,7 +69,6 @@ header .parallax {
     left: 0;
     right: 0;
     position: absolute;
-    max-width: 800px;
 }
 
 /* Little bit more style for navbar links */
@@ -308,4 +311,12 @@ body.woocommerce #primary {
     .sidebar {
         display: none;
     }
+    .contact_col {
+      text-align: center;
+    }
+}
+
+/* Fix for incorrectly indented navbar / social media items */
+.social-nav, .navbar-nav {
+  margin-left: 0;
 }

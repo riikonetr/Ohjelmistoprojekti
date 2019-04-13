@@ -23,8 +23,12 @@
         <header role="banner" class="header-sticky">
 
             <div class="parallax" style="<?php vahizstore_landing_img() ?>">
-                <div class="header-logo">
-                    <?php site_header_logo() ?>
+                <div class="container-fluid header-logo">
+                  <div class="row justify-content-md-center align-items-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                      <?php storefront_site_title_or_logo() ?>
+                    </div>
+                  </div>
                 </div>
             </div>
             <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">

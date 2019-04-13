@@ -211,7 +211,7 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 
                     // Hide/display sections
                     $wp_customize->add_section('visibility_section', array(
-                        'title'    => __('Section visibility', 'vahizstore'),
+                        'title'    => __('Section settings', 'vahizstore'),
                         'panel' => 'frontpage_panel',
                     ));
 
@@ -263,7 +263,69 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'type' => 'checkbox',
                     )));
 
+										//Set section titles
 
+										$wp_customize->add_setting('social_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'social_title', array(
+                        'label'    => __('Social section title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'social_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('media_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'media_title', array(
+                        'label'    => __('Media section title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'media_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('bio_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'bio_title', array(
+                        'label'    => __('Biography section title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'bio_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('tour_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'tour_title', array(
+                        'label'    => __('Tour section title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'tour_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('shop_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'shop_title', array(
+                        'label'    => __('Shop section title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'shop_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('blog_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'blog_title', array(
+                        'label'    => __('Blog section title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'blog_title',
+                        'type' => 'text',
+                    )));
+
+										//Set show window items per page
+										$wp_customize->add_section('shop_section', array(
+												'title'    => __('Shop settings', 'vahizstore'),
+												'panel' => 'frontpage_panel',
+										));
+										$wp_customize->add_setting('shop_items_per_page');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'blog_title', array(
+												'label'    => __('Shop items per page', 'vahizstore'),
+												'section'  => 'shop_section',
+												'settings' => 'shop_items_per_page',
+												'type' => 'number',
+												'input_attrs' => array('min' => 1)
+										)));
 
                 }
 
