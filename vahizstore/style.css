@@ -143,47 +143,20 @@ section .section-title {
     margin-top:-10px;
 }
 
-/* Hover effect for bio band pics */
-/*TODO Merge with shopwindow hover? */
+/* Hover effect for shop window products and bio pics */
+.member-container {
+    height: 300px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .member-image {
-  -webkit-filter: brightness(100%);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    -webkit-filter: brightness(100%);
+    height: 100%;
+    width: 100%;
 }
 
-.member-text {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-  text-transform: uppercase;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: all .45s ease;
-  -moz-transition: all .45s ease;
-  -ms-transition: all .45s ease;
-  -o-transition: all .45s ease;
-  transition: all .45s ease;
-}
-
-.member-container:hover .member-image {
-  -webkit-filter: brightness(50%);
-}
-
-.member-container:hover .member-text {
-  visibility: visible;
-  top: 50%;
-  opacity: 1;
-}
-
-
-
-/* Hover effect for shop window products */
 .product-img {
     -webkit-filter: brightness(100%);
     height: 100%;
@@ -192,7 +165,8 @@ section .section-title {
 .product-onsale {
     font-style: italic;
 }
-.product-text {
+.product-text,
+.member-text {
     position: absolute;
     top: 60%;
     left: 50%;
@@ -210,11 +184,13 @@ section .section-title {
     transition: all .45s ease;
 }
 
-.product-link:hover .product-img {
+.product-link:hover .product-img,
+.member-container:hover .member-image {
     -webkit-filter: brightness(50%);
 }
 
-.product-link:hover .product-text {
+.product-link:hover .product-text,
+.member-container:hover .member-text {
     visibility: visible;
     top: 50%;
     opacity: 1;
