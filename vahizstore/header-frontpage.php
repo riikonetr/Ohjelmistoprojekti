@@ -41,37 +41,37 @@
 
                       <?php if(get_theme_mod('social_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#social">Feed</a>
+                            <a class="nav-link" href="#social"><?php element_title('social_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('media_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#media">Media</a>
+                            <a class="nav-link" href="#media"><?php element_title('media_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('bio_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#bio">Bio</a>
+                            <a class="nav-link" href="#bio"><?php element_title('bio_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('tour_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#tour">Tour</a>
+                            <a class="nav-link" href="#tour"><?php element_title('tour_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('shop_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#shop">Shop</a>
+                            <a class="nav-link" href="#shop"><?php element_title('shop_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('blog_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#blog">Blog</a>
+                            <a class="nav-link" href="#blog"><?php element_title('blog_title'); ?></a>
                         </li>
                       <?php endif; ?>
 

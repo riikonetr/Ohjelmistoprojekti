@@ -378,3 +378,8 @@ body.woocommerce #primary {
     object-fit: cover;
     background-image: linear-gradient(to left top, #acacac, #c0c0c0, #d5d5d5, #eaeaea, #ffffff);
 }
+
+/* single blog page */
+#primary{
+    color:white;
+}
