@@ -319,7 +319,7 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
 												'panel' => 'frontpage_panel',
 										));
 										$wp_customize->add_setting('shop_items_per_page');
-										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'blog_title', array(
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'shop_items_per_page', array(
 												'label'    => __('Shop items per page', 'vahizstore'),
 												'section'  => 'shop_section',
 												'settings' => 'shop_items_per_page',

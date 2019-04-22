@@ -7,35 +7,6 @@
  */
 
 ?>
-<style>
-    .carousel-control-prev,
-    .carousel-control-next {
-        visibility: hidden;
-        text-shadow: 3px 3px 16px #272634
-    }
-
-    .carousel:hover
-    .carousel-control-next { visibility: visible; }
-    .carousel:hover
-    .carousel-control-prev { visibility: visible; }
-
-    .carousel-control-next:active { filter: invert(100%); }
-    .carousel-control-prev:active { filter: invert(100%); }
-
-    .carousel-indicators{
-        position: static
-    }
-
-    .carousel
-    .carousel-indicators li{
-        width: auto !important;
-        height: auto !important;
-    }
-
-    .carousel img{
-        border-radius: 0px !important;
-    }
-</style>
 
 <!--Carousel Wrapper-->
 <div id="video-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">

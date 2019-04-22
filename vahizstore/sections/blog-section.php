@@ -7,7 +7,7 @@
  */
 ?>
 <style>
-    #myCarousel .carousel-caption {
+    #blogCarousel .carousel-caption {
         left:0;
         right:0;
         bottom:0;
@@ -17,7 +17,7 @@
         text-shadow:none;
     }
 
-    #myCarousel .list-group {
+    #blogCarousel .list-group {
         color: black;
         position:absolute;
         top:0;
@@ -27,24 +27,24 @@
         height: 100% !important;
         overflow: hidden;
     }
-    #myCarousel .list-group-item {
+    #blogCarousel .list-group-item {
         color: black;
         border-radius:0px;
         cursor:pointer;
         flex: 1;
     }
-    #myCarousel .list-group .active {
+    #blogCarousel .list-group .active {
         color: black;
         background-color:#eee;
     }
 
     @media (min-width: 992px) {
-        #myCarousel {padding-right:33.3333%;}
-        #myCarousel .carousel-controls {display:none;}
+        #blogCarousel {padding-right:33.3333%;}
+        #blogCarousel .carousel-controls {display:none;}
     }
     @media (max-width: 991px) {
         .carousel-caption p,
-        #myCarousel .list-group {display:none;}
+        #blogCarousel .list-group {display:none;}
     }
 
     .list-group-item:hover { filter: brightness(85%) }
@@ -61,7 +61,7 @@
 <h3><center><?php element_title('blog_title'); ?></center></h3>
 
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="blogCarousel" class="carousel slide" data-ride="carousel">
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
@@ -69,7 +69,6 @@
 <?php
 
     $args = array(
-        'category_name' => 'blog',
         'posts_per_page' => 5,
         'post_status' => 'publish',
         'orderby' => 'publish_date',
@@ -126,10 +125,10 @@
 
         <!-- Controls -->
         <div class="carousel-controls">
-            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <a class="carousel-control-prev" href="#blogCarousel" data-slide="prev">
               <span class="fas fa-3x fa-arrow-alt-circle-left"></span>
             </a>
-            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <a class="carousel-control-next" href="#blogCarousel" data-slide="next">
               <span class="fas fa-3x fa-arrow-alt-circle-right"></span>
             </a>
         </div>
@@ -145,7 +144,7 @@
         while ( $the_query->have_posts() ) {
             $the_query->the_post();
 ?>
-            <li data-target="#myCarousel" data-slide-to="<?php echo $slide_index++ ?>" class="list-group-item"><?php echo get_the_title() ?></li>
+            <li data-target="#blogCarousel" data-slide-to="<?php echo $slide_index++ ?>" class="list-group-item"><?php echo get_the_title() ?></li>
 <?php
         }
       }
