@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?>>
     <div id="page" class="front-page">
-        <header role="banner" class="header-sticky">
+        <header class="header-sticky">
 
             <div class="parallax" style="<?php vahizstore_landing_img() ?>">
                 <div class="container-fluid header-logo">
@@ -33,7 +33,7 @@
             </div>
             <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-                    <a class="navbar-toggler-icon"></a>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <?php do_action('vahizstore_header_cart'); ?>
                 <div class="navbar-collapse collapse justify-content-center" id="navbar">

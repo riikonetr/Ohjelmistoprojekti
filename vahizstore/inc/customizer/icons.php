@@ -14,13 +14,13 @@
 		<div class="iconpicker">
 			<div class="iconpicker-items">
 
-				<i data-type="iconpicker-item" title=".fa-google" class="fa fa-google"></i>
-				<i data-type="iconpicker-item" title=".fa-instagram" class="fa fa-instagram"></i>
-				<i data-type="iconpicker-item" title=".fa-facebook" class="fa fa-facebook"></i>
-				<i data-type="iconpicker-item" title=".fa-spotify" class="fa fa-spotify"></i>
-				<i data-type="iconpicker-item" title=".fa-twitter" class="fa fa-twitter"></i>
-				<i data-type="iconpicker-item" title=".fa-vimeo-square" class="fa fa-vimeo-square"></i>
-                                <i data-type="iconpicker-item" title=".fa-itunes" class="fa fa-itunes"></i>
+				<i data-type="iconpicker-item" title=".fa-google" class="fab fa-google"></i>
+				<i data-type="iconpicker-item" title=".fa-instagram" class="fab fa-instagram"></i>
+				<i data-type="iconpicker-item" title=".fa-facebook" class="fab fa-facebook"></i>
+				<i data-type="iconpicker-item" title=".fa-spotify" class="fab fa-spotify"></i>
+				<i data-type="iconpicker-item" title=".fa-twitter" class="fab fa-twitter"></i>
+				<i data-type="iconpicker-item" title=".fa-vimeo-square" class="fab fa-vimeo-square"></i>
+                                <i data-type="iconpicker-item" title=".fa-itunes" class="fab fa-itunes"></i>
 
 			</div> <!-- /.iconpicker-items -->
 		</div> <!-- /.iconpicker -->

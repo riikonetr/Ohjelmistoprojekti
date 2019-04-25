@@ -61,7 +61,7 @@
         $youtube_img_src = 'https://img.youtube.com/vi/' . $link_id . '/1.jpg';
 ?>
         <li data-target="#video-carousel" data-slide-to="<?php echo $_n_thumb ?>" class="<?php echo $_active ?>">
-            <img class="d-block w-100" src="<?php echo $youtube_img_src ?>" class="img-fluid">
+            <img class="d-block w-100 img-fluid" src="<?php echo $youtube_img_src ?>" alt="Youtube video image">
         </li>
 <?php
         $_active = '';

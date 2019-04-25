@@ -73,7 +73,7 @@ class Customizer_Repeater extends WP_Customize_Control {
 	}
 	/*Enqueue resources for the control*/
 	public function enqueue() {
-		wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri().'/assets/font-awesome/font-awesome.min.css', array(), CUSTOMIZER_REPEATER_VERSION );
+		wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array(), CUSTOMIZER_REPEATER_VERSION );
 		wp_enqueue_style( 'customizer-repeater-admin-stylesheet', get_stylesheet_directory_uri().'/assets/repeater/repeater-style.css', array(), CUSTOMIZER_REPEATER_VERSION );
 		wp_enqueue_script( 'customizer-repeater-script', get_stylesheet_directory_uri() . '/assets/repeater/repeater-script.js', array('jquery', 'jquery-ui-draggable', 'wp-color-picker' ), CUSTOMIZER_REPEATER_VERSION, true  );
 		wp_enqueue_script( 'customizer-repeater-fontawesome-iconpicker', get_stylesheet_directory_uri() . '/assets/font-awesome/fontawesome-iconpicker.min.js', array( 'jquery' ), CUSTOMIZER_REPEATER_VERSION, true );
@@ -286,7 +286,7 @@ class Customizer_Repeater extends WP_Customize_Control {
                     <div class="input-group icp-container">
                         <input data-placement="bottomRight" class="icp icp-auto" value="<?php if(!empty($value)) { echo esc_attr( $value );} ?>" type="text">
                         <span class="input-group-addon">
-                            <i class="fa <?php echo esc_attr($value); ?>"></i>
+                            <i class="fab <?php echo esc_attr($value); ?>"></i>
                         </span>
                     </div>
                                 <?php get_template_part( $this->customizer_icon_container ); ?>

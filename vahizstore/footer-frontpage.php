@@ -8,10 +8,8 @@
  */
 
 ?>
-
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <!-- Footer -->
-        <footer role="contentinfo" class="footer-social-links">
+        <footer class="footer-social-links">
 
             <!-- Footer Links -->
             <div class="container">
@@ -94,7 +92,7 @@
 
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">
-              &copy Gladenfold and the boyz 2019. Some rights reversed.
+                &copy; Gladenfold and the boyz 2019. Some rights reversed.
             </div>
             <!-- Copyright -->
 
