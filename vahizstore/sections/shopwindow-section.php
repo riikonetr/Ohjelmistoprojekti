@@ -8,7 +8,7 @@
 
 ?>
 
-<h3><center><?php element_title('shop_title'); ?></center></h3>
+<h3 class="section-title"><?php element_title('shop_title'); ?></h3>
 
 
 <?php
@@ -38,7 +38,7 @@
                     <?php $salePrice = $product->get_sale_price(); ?>
                     <?php $onsaleStartDate = $product->get_date_on_sale_from(); ?>
                     <?php $onsaleEndDate = $product->get_date_on_sale_to(); ?>
-                    <img class="product-img img-thumbnail" src="<?php  echo $image[0]; ?>">
+                    <img class="product-img img-thumbnail" src="<?php  echo $image[0]; ?>" alt="Product image">
                     <div class="product-text">
                         <?php if($salePrice) { ?>
                             <h6 class="product-onsale">On sale</h6>
@@ -48,7 +48,7 @@
                         <?php } ?>
                         <h2><?php  echo $title; ?></h2>
                         <hr>
-                        <h3><?php  echo $price; ?> &euro;</h3>
+                        <h3><?php  echo $price . ' ' . get_woocommerce_currency_symbol(); ?></h3>
                     </div>
                 </a>
             </div>

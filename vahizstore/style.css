@@ -102,10 +102,8 @@ header .parallax {
     background-color: rgb(160, 175, 255);
 }
 
-section .section-title {
+.section-title {
     text-align: center;
-    color: #007b5e;
-    margin-bottom: 50px;
     text-transform: uppercase;
 }
 

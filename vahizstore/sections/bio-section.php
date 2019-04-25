@@ -8,7 +8,7 @@
 
 ?>
 
-<h3><center><?php element_title('bio_title'); ?></center></h3>
+<h3 class="section-title"><?php element_title('bio_title'); ?></h3>
 
 <?php
     $args = array(
@@ -35,7 +35,7 @@
 ?>
         <div class="col">
             <figure class="member-container">
-                <img class="member-image" src="<?php echo $repeater_item->image_url ?>">
+                <img class="member-image" src="<?php echo $repeater_item->image_url ?>" alt="Member image">
                 <div class="member-text"><?php echo $repeater_item->title ?></div>
             </figure>
         </div>

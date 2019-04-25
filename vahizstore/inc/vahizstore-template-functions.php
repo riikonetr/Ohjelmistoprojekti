@@ -31,7 +31,7 @@ if ( ! function_exists( 'bootsrap_enqueue_scripts' ) ) {
  */
 if ( ! function_exists( 'awesomefonts_enqueue_styles' ) ) {
     function awesomefonts_enqueue_styles() {
-        wp_register_style( 'awesomeStyle', get_stylesheet_directory_uri() . '/assets/font-awesome/font-awesome.min.css' );
+        wp_register_style( 'awesomeStyle', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css' );
         wp_enqueue_style( 'awesomeStyle' );
     }
 }

@@ -6,59 +6,7 @@
  * @package vahizstore
  */
 ?>
-<style>
-    #blogCarousel .carousel-caption {
-        left:0;
-        right:0;
-        bottom:0;
-        text-align:left;
-        padding:10px;
-        background:rgba(0,0,0,0.6);
-        text-shadow:none;
-    }
-
-    #blogCarousel .list-group {
-        color: black;
-        position:absolute;
-        top:0;
-        right:0;
-        display: flex;
-        flex-direction: column;
-        height: 100% !important;
-        overflow: hidden;
-    }
-    #blogCarousel .list-group-item {
-        color: black;
-        border-radius:0px;
-        cursor:pointer;
-        flex: 1;
-    }
-    #blogCarousel .list-group .active {
-        color: black;
-        background-color:#eee;
-    }
-
-    @media (min-width: 992px) {
-        #blogCarousel {padding-right:33.3333%;}
-        #blogCarousel .carousel-controls {display:none;}
-    }
-    @media (max-width: 991px) {
-        .carousel-caption p,
-        #blogCarousel .list-group {display:none;}
-    }
-
-    .list-group-item:hover { filter: brightness(85%) }
-    .list-group-item:active { filter: brightness(70%) }
-
-    .blog-image{
-        width: 760px;
-        height: 400px;
-        object-fit: cover;
-        background-image: linear-gradient(to left top, #acacac, #c0c0c0, #d5d5d5, #eaeaea, #ffffff);
-    }
-</style>
-
-<h3><center><?php element_title('blog_title'); ?></center></h3>
+<h3 class="section-title"><?php element_title('blog_title'); ?></h3>
 
 
 <div id="blogCarousel" class="carousel slide" data-ride="carousel">

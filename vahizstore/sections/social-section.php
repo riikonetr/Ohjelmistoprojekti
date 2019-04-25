@@ -8,7 +8,7 @@
 
 ?>
 
-<h3><center><?php element_title('social_title'); ?></center></h3>
+<h3 class="section-title"><?php element_title('social_title'); ?></h3>
 
 <!-- Place <div> tag where you want the feed to appear -->
 <div id="curator-feed"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
