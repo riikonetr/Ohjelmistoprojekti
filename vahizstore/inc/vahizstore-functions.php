@@ -83,8 +83,13 @@ function songkick_id() {
 function element_title($title_id) {
 
   $title = get_theme_mod($title_id);
-  debug_to_console($title);
   echo esc_attr( $title );
+}
+
+function element_nav_title($title_nav_id) {
+
+  $nav_title = get_theme_mod($title_nav_id);
+  echo esc_attr( $nav_title );
 }
 
 /**
@@ -193,4 +198,18 @@ function contact_email() {
         $email = sanitize_email(get_theme_mod('contact_email'));
         echo '<i class="fas fa-envelope mr-3"></i>';
         echo $email;
+}
+
+function contact_line($line_id) {
+      $out = '<p>';
+      $url = get_theme_mod($line_id . '_url');
+      if($url) {
+        $out = $out . '<a ' . href($url) . '>';
+      }
+      $out = $out . get_theme_mod($line_id);
+      if($url) {
+        $out = $out . '</a>';
+      }
+      $out = $out . '</p>';
+      echo $out;
 }

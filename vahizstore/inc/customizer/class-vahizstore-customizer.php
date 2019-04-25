@@ -201,6 +201,90 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'panel' => 'frontpage_panel',
                     ));
 
+										$wp_customize->add_setting('contact_1');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_1', array(
+												'label'    => __('Contact line 1', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_1',
+												'type' => 'text',
+										)));
+
+										$wp_customize->add_setting('contact_1_url');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_1_url', array(
+												'label'    => __('Contact line 1 url', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_1_url',
+												'type' => 'text',
+										)));
+
+										$wp_customize->add_setting('contact_2');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_2', array(
+												'label'    => __('Contact line 2', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_2',
+												'type' => 'text',
+										)));
+
+										$wp_customize->add_setting('contact_2_url');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_2_url', array(
+												'label'    => __('Contact line 2 url', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_2_url',
+												'type' => 'text',
+										)));
+
+
+										$wp_customize->add_setting('contact_3');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_3', array(
+												'label'    => __('Contact line 3', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_3',
+												'type' => 'text',
+										)));
+
+										$wp_customize->add_setting('contact_3_url');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_3_url', array(
+												'label'    => __('Contact line 3 url', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_3_url',
+												'type' => 'text',
+										)));
+
+
+										$wp_customize->add_setting('contact_4');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_4', array(
+												'label'    => __('Contact line 4', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_4',
+												'type' => 'text',
+										)));
+
+										$wp_customize->add_setting('contact_4_url');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_4_url', array(
+												'label'    => __('Contact line 4 url', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_4_url',
+												'type' => 'text',
+										)));
+
+
+										$wp_customize->add_setting('contact_5');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_5', array(
+												'label'    => __('Contact line 5', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_5',
+												'type' => 'text',
+										)));
+
+										$wp_customize->add_setting('contact_5_url');
+										$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_5_url', array(
+												'label'    => __('Contact line 5 url', 'vahizstore'),
+												'section'  => 'social_section',
+												'settings' => 'contact_5_url',
+												'type' => 'text',
+										)));
+
+
                     $wp_customize->add_setting('contact_email');
                     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'contact_email', array(
                         'label'    => __('Contact email', 'vahizstore'),
@@ -312,6 +396,57 @@ if ( ! class_exists( 'VahizStore_Customizer' ) ) :
                         'settings' => 'blog_title',
                         'type' => 'text',
                     )));
+
+										//Set navbar titles for sections
+
+										$wp_customize->add_setting('social_nav_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'social_nav_title', array(
+                        'label'    => __('Social section navigation title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'social_nav_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('media_nav_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'media_nav_title', array(
+                        'label'    => __('Media section navigation title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'media_nav_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('bio_nav_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'bio_nav_title', array(
+                        'label'    => __('Biography section navigation title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'bio_nav_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('tour_nav_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'tour_nav_title', array(
+                        'label'    => __('Tour section navigation title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'tour_nav_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('shop_nav_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'shop_nav_title', array(
+                        'label'    => __('Shop section navigation title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'shop_nav_title',
+                        'type' => 'text',
+                    )));
+
+                    $wp_customize->add_setting('blog_nav_title');
+                    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'blog_nav_title', array(
+                        'label'    => __('Blog section navigation title', 'vahizstore'),
+                        'section'  => 'visibility_section',
+                        'settings' => 'blog_nav_title',
+                        'type' => 'text',
+                    )));
+
 
 										//Set show window items per page
 										$wp_customize->add_section('shop_section', array(

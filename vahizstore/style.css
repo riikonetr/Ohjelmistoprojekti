@@ -129,6 +129,16 @@ section .section-title {
     z-index: 1;
 }
 
+.contact_col a {
+  color: white;
+  font-size: 16px;
+}
+
+.contact_col a:hover{
+  color: white;
+  font-size: 16px;
+}
+
 .sidebar a, footer a {
     color: white;
     font-size:25px;

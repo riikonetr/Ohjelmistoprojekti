@@ -41,37 +41,37 @@
 
                       <?php if(get_theme_mod('social_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#social"><?php element_title('social_title'); ?></a>
+                            <a class="nav-link" href="#social"><?php element_nav_title('social_nav_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('media_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#media"><?php element_title('media_title'); ?></a>
+                            <a class="nav-link" href="#media"><?php element_nav_title('media_nav_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('bio_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#bio"><?php element_title('bio_title'); ?></a>
+                            <a class="nav-link" href="#bio"><?php element_nav_title('bio_nav_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('tour_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#tour"><?php element_title('tour_title'); ?></a>
+                            <a class="nav-link" href="#tour"><?php element_nav_title('tour_nav_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('shop_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#shop"><?php element_title('shop_title'); ?></a>
+                            <a class="nav-link" href="#shop"><?php element_nav_title('shop_nav_title'); ?></a>
                         </li>
                       <?php endif; ?>
 
                       <?php if(get_theme_mod('blog_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#blog"><?php element_title('blog_title'); ?></a>
+                            <a class="nav-link" href="#blog"><?php element_nav_title('blog_nav_title'); ?></a>
                         </li>
                       <?php endif; ?>
 

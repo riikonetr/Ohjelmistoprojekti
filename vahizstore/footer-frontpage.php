@@ -32,9 +32,36 @@
                   <!-- Links -->
                   <h6 class="text-uppercase font-weight-bold">Contact</h6>
                   <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                  <p>
-                    <?php contact_email(); ?>
-                  </p>
+                  <?php if(get_theme_mod('contact_1')) : ?>
+                    <?php contact_line('contact_1'); ?>
+                  <?php endif; ?>
+                  <?php if(get_theme_mod('contact_2')) : ?>
+                    <p>
+                      <?php contact_line('contact_2'); ?>
+                    </p>
+                  <?php endif; ?>
+                  <?php if(get_theme_mod('contact_3')) : ?>
+                    <p>
+                      <?php contact_line('contact_3'); ?>
+                    </p>
+                  <?php endif; ?>
+                  <?php if(get_theme_mod('contact_4')) : ?>
+                    <p>
+                      <?php contact_line('contact_4'); ?>
+                    </p>
+                  <?php endif; ?>
+                  <?php if(get_theme_mod('contact_5')) : ?>
+                    <p>
+                      <?php contact_line('contact_5'); ?>
+                    </p>
+                  <?php endif; ?>
+                  <?php if(get_theme_mod('contact_email')) : ?>
+                    <p>
+                      <?php contact_email(); ?>
+                    </p>
+                  <?php endif; ?>
+
+
 
                 </div>
 
