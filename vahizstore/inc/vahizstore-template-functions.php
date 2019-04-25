@@ -5,6 +5,57 @@
  * @package vahizstore
  */
 
+/**
+* Include bootsrap
+ */
+if ( ! function_exists( 'bootsrap_enqueue_styles' ) ) {
+    function bootsrap_enqueue_styles() {
+        if( is_front_page() || is_singular('post') ) {
+            wp_register_style( 'bootstrapStyle', get_stylesheet_directory_uri() . '/assets/bootsrap/bootstrap.min.css' );
+            wp_enqueue_style( 'bootstrapStyle' );
+        }
+    }
+}
+
+if ( ! function_exists( 'bootsrap_enqueue_scripts' ) ) {
+    function bootsrap_enqueue_scripts() {
+        if( is_front_page() || is_singular('post') ) {
+            wp_register_script('bootstrapScript', get_stylesheet_directory_uri() . '/assets/bootsrap/bootstrap.min.js');
+            wp_enqueue_script( 'bootstrapScript' );
+        }
+    }
+}
+
+/**
+* Include awesome-fonts
+ */
+if ( ! function_exists( 'awesomefonts_enqueue_styles' ) ) {
+    function awesomefonts_enqueue_styles() {
+        wp_register_style( 'awesomeStyle', get_stylesheet_directory_uri() . '/assets/font-awesome/font-awesome.min.css' );
+        wp_enqueue_style( 'awesomeStyle' );
+    }
+}
+
+/*
+ * Customize new product editor
+ */
+if ( ! function_exists( 'remove_product_editor' ) ) {
+    function remove_product_editor() {
+        remove_post_type_support( 'product', 'editor' );
+    }
+}
+
+/*
+* Customize product view
+*/
+if ( ! function_exists( 'remove_storefront_sidebar' ) ) {
+    function remove_storefront_sidebar() {
+        if ( is_woocommerce() ) {
+            remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
+        }
+    }
+}
+
 if ( ! function_exists( 'vahizstore_cart_link_fragment' ) ) {
 	/**
 	 * Cart Fragments

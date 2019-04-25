@@ -21,13 +21,15 @@ body {
     font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
 }
 
-section {
+.front-page section {
     min-height: 700px;
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
-.front-page {
+.front-page,
+.singlepost-page
+{
     color: white;
 }
 
@@ -213,35 +215,9 @@ section .section-title {
  color: white;
 }
 
-body.woocommerce #primary {
-	float: none;
-	width: 100%;
-}
-
-.shop_table {
-  color: black;
-}
-
-.woocommerce-checkout-payment {
-  color: black;
-}
-
 /* Disable Storefront's default footer */
 #colophon {
   visibility: hidden;
-}
-
-
-/* Billing information layout fix */
-
-.woocommerce-billing-fields .form-row,
-.woocommerce-shipping-fields .form-row,
-.woocommerce-additional-fields .form-row {
-	display: block;
-}
-
-#customer_details .col-1, .col-2 {
-  max-width: 100%;
 }
 
 /* Changes based on browser width */
@@ -294,7 +270,7 @@ body.woocommerce #primary {
 
 /* Fix for incorrectly indented navbar / social media items */
 .social-nav, .navbar-nav {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 
@@ -377,9 +353,4 @@ body.woocommerce #primary {
     height: 400px;
     object-fit: cover;
     background-image: linear-gradient(to left top, #acacac, #c0c0c0, #d5d5d5, #eaeaea, #ffffff);
-}
-
-/* single blog page */
-#primary{
-    color:white;
 }
