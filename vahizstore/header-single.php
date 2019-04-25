@@ -19,7 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
+<div id="page" class="singlepost-page">
 
 
 	<header id="masthead" class="site-header header-sticky" role="banner" style="<?php storefront_header_styles(); ?>">

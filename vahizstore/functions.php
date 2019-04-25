@@ -24,59 +24,10 @@ require 'inc/vahizstore-functions.php';
 require 'inc/vahizstore-template-hooks.php';
 require 'inc/vahizstore-template-functions.php';
 
-/**
-* Include bootsrap
- */
-function bootsrap_enqueue_styles() {
-    wp_register_style( 'bootstrapStyle', get_stylesheet_directory_uri() . '/assets/bootsrap/bootstrap.min.css' );
-    wp_enqueue_style( 'bootstrapStyle' );
-}
-add_action( 'wp_enqueue_scripts', 'bootsrap_enqueue_styles');
-
-function bootsrap_enqueue_scripts() {
-    wp_register_script('bootstrapScript', get_stylesheet_directory_uri() . '/assets/bootsrap/bootstrap.min.js');
-    wp_enqueue_script( 'bootstrapScript' );
-}
-add_action( 'wp_enqueue_scripts', 'bootsrap_enqueue_scripts');
-
-/**
-* Include awesome-fonts
- */
-function awesomefonts_enqueue_styles() {
-    wp_register_style( 'awesomeStyle', get_stylesheet_directory_uri() . '/assets/font-awesome/font-awesome.min.css' );
-    wp_enqueue_style( 'awesomeStyle' );
-}
-add_action( 'wp_enqueue_scripts', 'awesomefonts_enqueue_styles');
-
-
-/**
-* Customize new product editor
-* TODO: Move to separate php file?
-*/
-
-
-function remove_product_editor() {
-  remove_post_type_support( 'product', 'editor' );
-}
-add_action( 'init', 'remove_product_editor' );
-
-
-/**
-* Customize product view
-* TODO: Move to separate php file?
-*/
-function remove_storefront_sidebar() {
-	if ( is_woocommerce() ) {
-		remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
-	}
-}
-add_action( 'get_header', 'remove_storefront_sidebar' );
-
-
 function debug_to_console( $data ) {
-if ( is_array( $data ) )
- $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
- else
- $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
-echo $output;
+    if ( is_array( $data ) )
+        $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
+    else
+        $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+    echo $output;
 }
