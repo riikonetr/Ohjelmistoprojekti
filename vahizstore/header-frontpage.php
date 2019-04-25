@@ -26,7 +26,7 @@
                 <div class="container-fluid header-logo">
                   <div class="row justify-content-md-center align-items-center">
                     <div class="col-12 col-md-10 col-lg-8 col-xl-6">
-                      <?php storefront_site_title_or_logo() ?>
+                      <?php site_header_logo() ?>
                     </div>
                   </div>
                 </div>
