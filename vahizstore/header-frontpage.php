@@ -1,4 +1,3 @@
-
 <?php
 /**
  * The header for our theme.
@@ -14,9 +13,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
 
 
 <?php wp_head(); ?>
@@ -24,44 +20,63 @@
 
 <body <?php body_class(); ?>>
     <div id="page" class="front-page">
-        <header role="banner" class="header-sticky">
+        <header class="header-sticky">
 
             <div class="parallax" style="<?php vahizstore_landing_img() ?>">
-                <div class="header-logo">
-                    <?php site_header_logo() ?>
+                <div class="container-fluid header-logo">
+                  <div class="row justify-content-md-center align-items-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                      <?php site_header_logo() ?>
+                    </div>
+                  </div>
                 </div>
             </div>
-            <nav class="navbar sticky-top  navbar-expand-sm navbar-dark bg-dark">
-                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar">
-                    <a class="navbar-toggler-icon"></a>
+            <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <?php do_action('vahizstore_header_cart'); ?>
-                <div class="navbar-collapse collapse" id="navbar">
-                    <ul class="navbar-nav justify-content-center d-flex flex-fill">
+                <div class="navbar-collapse collapse justify-content-center" id="navbar">
+                    <ul class="navbar-nav">
+
+                      <?php if(get_theme_mod('social_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#social">Feed</a>
+                            <a class="nav-link" href="#social"><?php element_nav_title('social_nav_title'); ?></a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('media_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#spotify">Music</a>
+                            <a class="nav-link" href="#media"><?php element_nav_title('media_nav_title'); ?></a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('bio_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#youtube">Videos</a>
+                            <a class="nav-link" href="#bio"><?php element_nav_title('bio_nav_title'); ?></a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('tour_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#bio">Bio</a>
+                            <a class="nav-link" href="#tour"><?php element_nav_title('tour_nav_title'); ?></a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('shop_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#tour">Tour</a>
+                            <a class="nav-link" href="#shop"><?php element_nav_title('shop_nav_title'); ?></a>
                         </li>
+                      <?php endif; ?>
+
+                      <?php if(get_theme_mod('blog_visible')) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#shop">Shop</a>
+                            <a class="nav-link" href="#blog"><?php element_nav_title('blog_nav_title'); ?></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#blog">Blog</a>
-                        </li>
+                      <?php endif; ?>
+
                     </ul>
                 </div>
-                <div class="d-flex flex-fill"><!--spacer--> </div>
             </nav>
 
         </header><!-- #masthead -->
